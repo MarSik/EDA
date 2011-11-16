@@ -1,0 +1,45 @@
+v 20061020 1
+B 300 300 1200 800 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 1500 1200 9 10 0 0 0 0 1
+description=780x series voltage regulator
+T 1500 1400 9 10 0 0 0 0 1
+distlicense=GPL
+T 1500 1600 9 10 0 0 0 0 1
+uselicense=unlimited
+T 1500 1800 9 10 0 0 0 0 1
+author=Ben Jackson
+T 1500 2000 9 10 0 0 0 0 1
+copyright=2007 Ben Jackson
+T 900 -400 9 10 1 1 0 3 1
+footprint=TO92
+T 900 900 9 10 1 1 0 3 1
+device=780x
+T 500 100 9 10 1 1 0 3 1
+refdes=U?
+P 1800 700 1500 700 1 0 0
+{
+T 1450 700 9 10 1 1 0 7 1
+pinlabel=OUT
+T 1600 750 5 8 1 1 0 0 1
+pinnumber=1
+T 1600 750 5 8 0 1 0 0 1
+pinseq=1
+}
+P 900 0 900 300 1 0 0
+{
+T 900 350 9 10 1 1 90 1 1
+pinlabel=GND
+T 850 250 5 8 1 1 90 6 1
+pinnumber=2
+T 850 250 5 8 0 1 90 6 1
+pinseq=2
+}
+P 0 700 300 700 1 0 0
+{
+T 350 700 9 10 1 1 0 1 1
+pinlabel=IN
+T 200 750 5 8 1 1 0 6 1
+pinnumber=3
+T 200 750 5 8 0 1 0 6 1
+pinseq=3
+}
