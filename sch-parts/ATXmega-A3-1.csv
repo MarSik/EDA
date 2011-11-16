@@ -1,0 +1,87 @@
+[options]
+generate_pinseq	yes
+sort_labels	yes
+sym_width	3000
+pinwidthvertical	400
+pinwidthhorizontal	400
+wordswap	no
+
+[geda_attr]
+version		20111116
+name		ATXMEGA-A3
+device		ATXMEGA-A3
+refdes		U?
+footprint	tssop64
+author		Martin Sivak <mars@montik.net>
+numslots	0
+description	Atmel Xmega A3 CPU family
+documentation	http://www.atmel.com/dyn/resources/prod_documents/doc8068.pdf
+use-license	CC-BY v.3
+dist-license	CC-BY v.3
+
+[pins]
+#pinnr	seq	type	style	posit.	net	label
+1		io	line	l		PA3
+2		io	line	l		PA4
+3		io	line	l		PA5
+4		io	line	l		PA6
+5		io	line	l		PA7
+6		io	line	l		PB0
+7		io	line	l		PB1
+8		io	line	l		PB2
+9		io	line	l		PB3
+10		io	line	l		PB4
+11		io	line	l		PB5
+12		io	line	l		PB6
+13		io	line	l		PB7
+14		pwr	line	b		GND
+15		pwr	line	t		Vcc
+16		io	line	l		PC0
+17		io	line	l		PC1
+18		io	line	l		PC2
+19		io	line	l		PC3
+20		io	line	l		PC4
+21		io	line	l		PC5
+22		io	line	l		PC6
+23		io	line	l		PC7
+24		pwr	line	b		GND
+25		pwr	line	t		Vcc
+26		io	line	r		PD0
+27		io	line	r		PD1
+28		io	line	r		PD2
+29		io	line	r		PD3
+30		io	line	r		PD4
+31		io	line	r		PD5
+32		io	line	r		PD6
+33		io	line	r		PD7
+34		pwr	line	b		GND
+35		pwr	line	t		Vcc
+36		io	line	r		PE0
+37		io	line	r		PE1
+38		io	line	r		PE2
+39		io	line	r		PE3
+40		io	line	r		PE4
+41		io	line	r		PE5
+42		io	line	r		PE6
+43		io	line	r		PE7
+44		pwr	line	t		Vcc
+45		pwr	line	b		GND
+46		io	line	r		PF0
+47		io	line	r		PF1
+48		io	line	r		PF2
+49		io	line	r		PF3
+50		io	line	r		PF4
+51		io	line	r		PF5
+52		pwr	line	b		GND
+53		pwr	line	t		Vcc
+54		io	line	r		PF6
+55		io	line	r		PF7
+56		in	line	l		PDI_DATA
+57		in	dot	l		\_RESET\_, PDI_CLK
+58		io	line	r		PR0, X0
+59		io	line	r		PR1, X1
+60		pwr	line	b		GND
+61		pwr	line	t		Avcc
+62		io	line	l		PA0
+63		io	line	l		PA1
+64		io	line	l		PA2
