@@ -712,7 +712,7 @@ ATXMEGA-A3
 T 1600 5900 5 10 0 0 0 0 1
 device=ATXMEGA-A3
 T 1600 6100 5 10 0 0 0 0 1
-footprint=tssop64
+footprint=tqfp64-10
 T 1600 6300 5 10 0 0 0 0 1
 author=Martin Sivak <mars@montik.net>
 T 1600 6500 5 10 0 0 0 0 1
