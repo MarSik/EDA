@@ -1,4 +1,4 @@
-v 20100214 2
+v 20110115 2
 B 400 0 800 800 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 V 800 400 200 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 T 400 900 9 10 1 0 0 0 1
@@ -40,3 +40,11 @@ T -35 -7 8 10 0 1 0 0 1
 device=SFH5110
 T -35 -7 8 10 0 1 0 0 1
 numslots=0
+T -35 -7 8 10 0 1 0 0 1
+footprint=TO220W
+T -35 -7 8 10 0 1 0 0 1
+author=Martin Sivak <mars@montik.net>
+T -35 -7 8 10 0 1 0 0 1
+documentation=http://www.hobbyrobot.cz/PDF/SFH5110.pdf
+T 1265 -7 8 10 1 1 0 0 1
+refdes=U?
