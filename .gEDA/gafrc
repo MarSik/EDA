@@ -1,0 +1,2 @@
+(component-library "${HOME}/Dropbox/EDA/repo/sch-parts")
+(component-library ".")
