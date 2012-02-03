@@ -27,5 +27,5 @@ CXXSRC =
 ASRC =
 
 # This includes the rest of rules DO NOT DELETE
--include ../../Makefile.avr.inc
+-include ~/Dropbox/EDA/Makefile.avr.inc
 -include ~/.gEDA/Makefile.avr.inc
