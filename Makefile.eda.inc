@@ -1,6 +1,6 @@
 #PROJECT = 
 #SCHEMAS = 
-PACKAGES = ~/Dropbox/EDA/parts-repo/pcb-parts
+PACKAGES = ~/Dropbox/EDA/repo/pcb-parts
 
 
 all: drc pcb
