@@ -1,13 +1,15 @@
-#include <avr/interrupts.h>
+#include <avr/interrupt.h>
 #include <avr/io.h>
-#include <avr/delay.h>
+#include <util/delay.h>
 #include <avr/sleep.h>
 
-void main(void)
+int main(void)
 {
     setup();
 
     while(1) {
         loop();
     }
+
+    return 0;
 }

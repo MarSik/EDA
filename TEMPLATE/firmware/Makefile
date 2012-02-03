@@ -1,7 +1,6 @@
 # Target device
 MCU = attiny85
 F_CPU = 16000000
-UPLOAD_RATE = 115200 #19200
 LFUSE = 0xE1
 HFUSE = 0xDD
 EFUSE = 0xFF
