@@ -23,12 +23,12 @@ CXXDEFS = -DF_CPU=$(F_CPU)
 CFLAGS = -Wa,-adhlns=$(<:.c=.lst) $(CDEBUG) $(CDEFS) $(CINCS) $(CTUNING) $(CWARN) $(CSTANDARD) $(CEXTRA)
 CXXFLAGS = -Wa,-adhlns=$(<:.cpp=.lst) $(CDEBUG) $(CXXDEFS) $(CINCS) $(CTUNING) $(CXXWARN) $(CXXEXTRA)
 ASFLAGS = -Wa,-adhlns=$(<:.S=.lst),-g$(DEBUG) 
-LDFLAGS = -Wl,--gc-sections
+LDFLAGS = -Wl,--gc-sections $(LDEXTRA)
 
 # Programming support using avrdude. Settings and variables.
 AVRDUDE_PROGRAMMER = $(PROTOCOL)
 AVRDUDE_PORT = $(PORT)
-AVRDUDE_FLAGS = -F -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER) \
+AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER) \
   -b $(UPLOAD_RATE)
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
@@ -83,9 +83,7 @@ eeprom: $(TARGET).eep
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_EEPROM)
 
 fuse:
-	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_LFUSE)
-	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_HFUSE)
-	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_EFUSE)
+	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_LFUSE) $(AVRDUDE_WRITE_HFUSE) $(AVRDUDE_WRITE_EFUSE)
 
 # Convert ELF to COFF for use in debugging / simulating in AVR Studio or VMLAB.
 COFFCONVERT=$(OBJCOPY) --debugging \
