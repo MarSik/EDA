@@ -1,0 +1,37 @@
+[labels]
+MCP42X1
+refdes=U?
+! copyright=2012 Martin Sivak
+! author=MarSik
+! uselicense=unlimited
+! distlicense=CC-BA-SA
+! device=MCP42X1
+! description=dual digital potentiometer
+! footprint=DIP14
+
+[left]
+.bus
+1 ! CS
+3 SDI
+13 SDO
+2 SCK
+
+12 ! SHDN
+11 ! WP
+
+[right]
+8 P0A
+9 POW
+10 P0B
+
+7 P1A
+6 P1W
+5 P1B
+
+[top]
+
+[bottom]
+4 GND
+14 Vcc
+
+[nc]

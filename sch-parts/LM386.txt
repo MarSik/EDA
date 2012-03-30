@@ -1,0 +1,28 @@
+[labels]
+LM386
+refdes=U?
+! copyright=2012 Martin Sivak
+! author=MarSik
+! uselicense=unlimited
+! distlicense=CC-BA-SA
+! device=LM386
+! description=O.5W single supply low voltage power audio amplifier
+! footprint=DIP8
+
+[left]
+2 IN-
+3 IN+
+
+[right]
+7 Bypass
+5 Vout
+
+[top]
+1 Gain
+8 Gain
+
+[bottom]
+4 GND
+6 Vcc
+
+[nc]

@@ -1,0 +1,29 @@
+[labels]
+A25LXXX
+refdes=U?
+! copyright=2012 Martin Sivak
+! author=MarSik
+! uselicense=unlimited
+! distlicense=CC-BA-SA
+! device=A25LXXX
+! description=Flash memory
+! footprint=DIP8
+
+[left]
+.bus
+1 ! CS
+5 SDI
+2 SDO
+6 SCK
+
+7 ! HOLD
+
+[right]
+
+[top]
+
+[bottom]
+4 GND
+8 Vcc
+
+[nc]

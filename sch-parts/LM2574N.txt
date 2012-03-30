@@ -1,0 +1,28 @@
+[labels]
+LM2574N
+refdes=U?
+! copyright=2012 Martin Sivak
+! author=MarSik
+! uselicense=unlimited
+! distlicense=CC-BA-SA
+! device=LM2574N
+! description=switching power regulator
+! footprint=DIP8
+
+[left]
+5 Vin
+3 ! Enable
+
+[right]
+1 Feedback
+7 Output
+
+[top]
+
+[bottom]
+2 Sig GND
+4 Pwr GND
+
+[nc]
+8 NC
+6 NC
