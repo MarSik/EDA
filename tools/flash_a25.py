@@ -108,7 +108,7 @@ if __name__ == '__main__':
 		sys.exit()
 		
 	print "Configuring SPI."
-	if not spi.cfg_pins(PinCfg.POWER | PinCfg.CS | PinCfg.AUX):
+	if not spi.cfg_pins(PinCfg.POWER | PinCfg.CS):
 		print "Failed to set SPI peripherals."
 		sys.exit()
                 
