@@ -102,7 +102,7 @@ extcoff: $(TARGET).elf
 
 
 size: $(TARGET).elf
-	$(SIZE) --common $<
+	$(SIZE) -A --common $<
 
 .SUFFIXES: .elf .hex .eep .lss .sym
 
