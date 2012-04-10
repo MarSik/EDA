@@ -1,0 +1,64 @@
+[labels]
+ATmegaXX4
+refdes=U?
+! copyright=2012 Martin Sivak
+! author=MarSik
+! uselicense=unlimited
+! distlicense=CC-BA-SA
+! device=ATmegaXX4
+! description=ATmega CPU
+! footprint=DIP40
+
+[left]
+40 PA0
+39 PA1
+38 PA2
+37 PA3
+36 PA4
+35 PA5
+34 PA6
+33 PA7
+
+1 PB0
+2 PB1
+3 PB2 INT2
+4 PB3
+5 PB4 /SS
+6 PB5 MOSI
+7 PB6 MISO
+8 PB7 SCK
+
+[right]
+22 PC0 SCL
+23 PC1 SDA
+24 PC2
+25 PC3
+26 PC4
+27 PC5
+28 PC6
+29 PC7
+
+14 PD0 RX0
+15 PD1 TX0
+16 PD2 RX1 INT0
+17 PD3 TX1 INT1
+18 PD4
+19 PD5
+20 PD6
+21 PD7
+
+[top]
+12 XTAL2
+13 XTAL1
+
+[bottom]
+9 ! RESET
+
+10 Vcc
+11 GND
+
+31 GND
+30 AVcc
+32 Aref
+
+[nc]

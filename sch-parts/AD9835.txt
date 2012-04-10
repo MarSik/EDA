@@ -1,0 +1,41 @@
+[labels]
+AD9835
+refdes=U?
+! copyright=2012 Martin Sivak
+! author=MarSik
+! uselicense=unlimited
+! distlicense=CC-BA-SA
+! device=AD9835
+! description=Direct digital frequency synthetizer
+! footprint=TSSOP16
+
+[left]
+6 MCLK
+
+7 SCK
+8 SDI
+9 FSYNC
+
+12 PSEL0
+11 PSEL1
+10 FSELECT
+
+[right]
+14 IOUT
+
+16 COMP
+1 FS ADJUST
+
+2 REFIN
+3 REFOUT
+
+[top]
+
+[bottom]
+4 DVcc
+5 DGND
+
+15 AVcc
+13 AGND
+
+[nc]
