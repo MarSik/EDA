@@ -1,0 +1,27 @@
+[labels]
+ADE-1
+refdes=U?
+! copyright=2012 Martin Sivak
+! author=MarSik
+! uselicense=unlimited
+! distlicense=CC-BA-SA
+! device=ADE-1
+! description=Frequency Mixer Level 7 (LO Power +7 dBm) 0.5 to 500 MHz
+! footprint=CD636
+
+[left]
+6 LO
+
+3 RF
+
+[right]
+2 IF
+
+[top]
+
+[bottom]
+1 GND
+4 GND
+5 GND
+
+[nc]
