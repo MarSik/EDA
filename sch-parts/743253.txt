@@ -1,0 +1,42 @@
+[labels]
+dual
+high speed 
+1:4 analog mux
+refdes=U?
+! copyright=2012 Martin Sivak
+! author=MarSik
+! uselicense=unlimited
+! distlicense=CC-BA-SA
+! device=SN74CBT3253CD
+! description=Dual high speed 1:4 analog mux
+! footprint=SO16
+
+[left]
+1 ! OEA
+15 ! OEB
+
+14 S0
+2 S1
+
+7 A
+
+9 B
+
+[right]
+6 A1
+5 A2
+4 A3
+3 A4
+
+10 B1
+11 B2
+12 B3
+13 B4
+
+[top]
+
+[bottom]
+8 GND
+16 Vcc
+
+[nc]

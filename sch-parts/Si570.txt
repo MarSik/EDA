@@ -1,0 +1,30 @@
+[labels]
+Si570/571
+refdes=U?
+! copyright=2012 Martin Sivak
+! author=MarSik
+! uselicense=unlimited
+! distlicense=CC-BA-SA
+! device=Si570
+! description=Frequency synthetizer 10 - 1300 Mhz
+! footprint=Si57x
+
+[left]
+2 OE
+
+7 SDA
+8 SCL
+
+1 Vctrl
+
+[right]
+4 CLK+
+5 CLK-
+
+[top]
+
+[bottom]
+3 GND
+6 Vcc
+
+[nc]
