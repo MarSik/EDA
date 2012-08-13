@@ -1,0 +1,34 @@
+EESchema-DOCLIB  Version 2.0  Date: Sun 12 Aug 2012 04:29:32 PM CEST
+#
+$CMP 744053
+D HIGH-SPEED CMOS LOGIC ANALOG MULTIPLEXERS/DEMULTIPLEXERS
+$ENDCMP
+#
+$CMP 74ACT74
+D Dual D FlipFlop, Set & Reset
+K TTL DFF
+F 74xx/74hc_hct74.pdf
+$ENDCMP
+#
+$CMP 74HC04
+D Hex Inverseur
+K HCMOS not inv
+$ENDCMP
+#
+$CMP 74HC74
+D Dual D FlipFlop, Set & Reset
+K TTL DFF
+F 74xx/74hc_hct74.pdf
+$ENDCMP
+#
+$CMP 74HCT04
+D Hex Inverseur
+K HCTMOS not inv
+$ENDCMP
+#
+$CMP 74LS14
+D Hex inverseur schmitt trigger
+K TTL not inv
+$ENDCMP
+#
+#End Doc Library

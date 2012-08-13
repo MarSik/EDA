@@ -1,0 +1,30 @@
+[labels]
+FTR-B4
+refdes=U?
+! copyright=2012 Martin Sivak
+! author=MarSik
+! uselicense=unlimited
+! distlicense=CC-BA-SA
+! device=FTR-B4
+! description=DPDT bistable relay
+! footprint=FTR-B4
+
+[left]
+1 coil
+
+2 NC
+3 C
+4 NO
+
+[right]
+8 coil
+
+7 NC
+6 C
+5 NO
+
+[top]
+
+[bottom]
+
+[nc]

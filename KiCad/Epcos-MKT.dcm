@@ -1,0 +1,1839 @@
+EESchema-DOCLIB  Version 2.0  Date: mar. 14 juin 2011 11:59:50 CEST
+#
+$CMP 0.0010UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0010UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0010UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0010UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0010UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0010UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0015UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0015UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0015UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0015UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0015UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0015UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0022UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0022UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0022UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0022UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0022UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0022UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0033UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0033UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0033UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0033UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0033UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0033UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0047UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0047UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0047UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0047UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0047UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0047UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0068UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0068UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0068UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0068UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0068UF/630V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0068UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.0068UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.010UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.010UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.010UF/400V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.010UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.010UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.010UF/630V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.010UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.010UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.015UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.015UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.015UF/250V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.015UF/400V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.015UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.015UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.015UF/630V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.015UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.015UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.022UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.022UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.022UF/250V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.022UF/400V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.022UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.022UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.022UF/630V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.022UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.022UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/250V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/250V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/400V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/630V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/630V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.033UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/100V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/250V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/250V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/400V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/400V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/630V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.047UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/100V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/250V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/250V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/400V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/400V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/630V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/630V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/630V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.068UF/63V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/100V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/100V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/250V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/250V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/250V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/400V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/400V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/450V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/630V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/630V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.10UF/63V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/100V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/100V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/250V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/250V/15MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/250V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/400V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/400V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/400V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/400V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/450V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/630V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/630V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.15UF/63V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/100V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/100V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/250V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/250V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/250V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/400V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/400V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/450V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/630V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/630V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.22UF/63V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/100V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/100V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/100V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/250V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/250V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/400V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/400V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/450V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/630V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/630V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/630V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.33UF/63V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/100V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/100V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/100V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/250V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/250V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/250V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/250V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/400V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/400V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/450V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/630V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/630V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/63V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.47UF/63V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/100V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/100V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/100V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/250V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/250V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/400V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/400V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/400V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/450V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/630V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/630V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/63V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/63V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 0.68UF/63V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/100V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/100V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/100V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/250V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/250V/15MM/W
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/250V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/400V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/400V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/450V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/630V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/63V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/63V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.0UF/63V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/100V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/100V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/250V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/250V/15MM/W
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/250V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/250V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/400V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/400V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/630V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/63V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/63V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 1.5UF/63V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 100UF/100V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 100UF/63V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 100UF/63V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 10UF/100V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 10UF/100V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 10UF/250V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 10UF/250V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 10UF/400V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 10UF/400V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 10UF/63V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 10UF/63V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 10UF/63V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 150UF/100V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 150UF/63V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 15UF/100V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 15UF/100V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 15UF/100V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 15UF/250V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 15UF/250V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 15UF/400V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 15UF/63V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 15UF/63V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 2.2UF/100V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 2.2UF/100V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 2.2UF/250V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 2.2UF/250V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 2.2UF/400V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 2.2UF/630V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 2.2UF/63V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 2.2UF/63V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 2.2UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 2.2UF/63V/7.5MM
+D Epcos Polyester MKT Capacitor 7.5mm
+K Epcos MKT B32520 7.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 220UF/63V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 22UF/100V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 22UF/100V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 22UF/250V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 22UF/250V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 22UF/400V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 22UF/63V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 22UF/63V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 22UF/63V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 3.3UF/100V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 3.3UF/100V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 3.3UF/250V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 3.3UF/250V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 3.3UF/400V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 3.3UF/400V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 3.3UF/63V/10MM
+D Epcos Polyester MKT Capacitor 10mm
+K Epcos MKT B32521 10mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 3.3UF/63V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 3.3UF/63V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 3.3UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 33UF/100V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 33UF/100V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 33UF/250V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 33UF/250V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 33UF/63V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 33UF/63V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/100V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/100V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/100V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/250V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/250V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/400V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/400V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/63V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/63V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/63V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 4.7UF/63V/5.0MM
+D Epcos Polyester MKT Capacitor 5.0mm
+K Epcos MKT B32529 5.0mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 47UF/100V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 47UF/100V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 47UF/250V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 47UF/63V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 47UF/63V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 6.8UF/100V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 6.8UF/100V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 6.8UF/250V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 6.8UF/250V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 6.8UF/400V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 6.8UF/400V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 6.8UF/63V/15MM
+D Epcos Polyester MKT Capacitor 15mm
+K Epcos MKT B32522 15mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 6.8UF/63V/22.5MM
+D Epcos Polyester MKT Capacitor 22.5mm
+K Epcos MKT B32523 22.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 6.8UF/63V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 68UF/100V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 68UF/100V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 68UF/250V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 68UF/63V/27.5MM
+D Epcos Polyester MKT Capacitor 27.5mm
+K Epcos MKT B32524 27.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+$CMP 68UF/63V/37.5MM
+D Epcos Polyester MKT Capacitor 37.5mm
+K Epcos MKT B32526 37.5mm
+F /home/alain/Atelier/Electronique/datasheets/Epcos/MKT_B32520_529.pdf
+$ENDCMP
+#
+#End Doc Library

@@ -1,0 +1,37 @@
+EESchema-DOCLIB  Version 2.0  Date: Sun 12 Aug 2012 01:28:24 PM CEST
+#
+$CMP IRF7341PBF
+F transistors/mos/*.*
+$ENDCMP
+#
+$CMP MAX1555
+D The MAX1551/MAX1555 charge a single-cell lithium-ion
+(Li+) battery from both USB and AC adapter sources.
+They operate with no external FETs or diodes, and
+accept operating input voltages up to 7V.
+On-chip thermal limiting simplifies PC board layout and
+allows optimum charging rate without the thermal limits
+imposed by worst-case battery and input voltage. When
+the MAX1551/MAX1555 thermal limits are reached, the
+chargers do not shut down, but progressively reduce
+charging current.
+The MAX1551 includes a POK output to indicate when
+input power is present. If either charging source is
+active, POK goes low. The MAX1555 instead features a
+CHG output to indicate charging status.
+With USB connected, but without DC power, charge cur-
+rent is set to 100mA (max). This allows charging from
+both powered and unpowered USB hubs with no port
+communication required. When DC power is connected,
+charging current is set at 280mA (typ). No input-blocking
+diodes are required to prevent battery drain.
+The MAX1551/MAX1555 are available in 5-pin thin SOT23
+packages and operate over a -40°C to +85°C range.
+
+$ENDCMP
+#
+$CMP TLE2426CD
+D A precision virtual ground whose output voltage is always equal to one-half the input voltage, the “rail splitter.”
+$ENDCMP
+#
+#End Doc Library
