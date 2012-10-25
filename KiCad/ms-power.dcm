@@ -1,33 +1,23 @@
-EESchema-DOCLIB  Version 2.0  Date: Sun 12 Aug 2012 01:28:24 PM CEST
+EESchema-DOCLIB  Version 2.0  Date: čt 25 říj 12:23:32 2012
 #
 $CMP IRF7341PBF
 F transistors/mos/*.*
 $ENDCMP
 #
+$CMP LM334
+D The LM134/LM234/LM334 are 3-terminal adjustable current sources featuring 10,000:1 range in operating current, excel- lent current regulation and a wide dynamic voltage range of 1V to 40V. Current is established with one external resistor and no other parts are required.
+$ENDCMP
+#
+$CMP LM7705
+D (null)
+$ENDCMP
+#
 $CMP MAX1555
 D The MAX1551/MAX1555 charge a single-cell lithium-ion
-(Li+) battery from both USB and AC adapter sources.
-They operate with no external FETs or diodes, and
-accept operating input voltages up to 7V.
-On-chip thermal limiting simplifies PC board layout and
-allows optimum charging rate without the thermal limits
-imposed by worst-case battery and input voltage. When
-the MAX1551/MAX1555 thermal limits are reached, the
-chargers do not shut down, but progressively reduce
-charging current.
-The MAX1551 includes a POK output to indicate when
-input power is present. If either charging source is
-active, POK goes low. The MAX1555 instead features a
-CHG output to indicate charging status.
-With USB connected, but without DC power, charge cur-
-rent is set to 100mA (max). This allows charging from
-both powered and unpowered USB hubs with no port
-communication required. When DC power is connected,
-charging current is set at 280mA (typ). No input-blocking
-diodes are required to prevent battery drain.
-The MAX1551/MAX1555 are available in 5-pin thin SOT23
-packages and operate over a -40°C to +85°C range.
-
+$ENDCMP
+#
+$CMP MAX4080
+D The MAX4080/MAX4081 are high-side, current-sense amplifiers with an input voltage range that extends from 4.5V to 76V making them ideal for telecom, automotive, backplane, and other systems where high-voltage cur- rent monitoring is critical. The MAX4080 is designed for unidirectional current-sense applications and the MAX4081 allows bidirectional current sensing. The MAX4081 single output pin continuously monitors the transition from charge to discharge and avoids the need for a separate polarity output. The MAX4081 requires an external reference to set the zero-current output level (VSENSE = 0V). The charging current is rep- resented by an output voltage from VREF to VCC, while discharge current is given from VREF to GND.
 $ENDCMP
 #
 $CMP TLE2426CD
