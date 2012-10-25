@@ -1,0 +1,8 @@
+.MODEL BAT42 D  ( IS=87.5u RS=18.1m BV=30.0 IBV=500n
++ CJO=8.88p  M=0.333 N=3.51 TT=7.20n )
+.MODEL BAT43 D  ( IS=87.5u RS=18.1m BV=30.0 IBV=500n
++ CJO=8.88p  M=0.333 N=3.51 TT=7.20n )
+.Model 1N5819 d(is=2.835u rs=47.12m n=1 cjo=302.5p vj=.75 m=.7206 eg=1.11 xti=0 fc=.5 )
+.Model 1N4007 d(is=1.02E-08 rs=0.054 n=1.9017 tt=4.39E-06 cjo=3.00E-11 vj=0.81000 m=0.50000 )
+
+

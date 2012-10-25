@@ -1,0 +1,125 @@
+**********************************************************************
+*
+* Copyright (c) International Rectifier
+*
+*  AUIR0815S: BUFFER GATE DRIVER IC
+*   
+*  Ports 
+*    CB:   Boot capacitor
+*    VEE:  Negative supply pin (short to GND in case of single supply operation)
+*    IN:   Logic input for OUT
+*    LPM:  Logic input, for Low Power Mode: LPM=0 activates the Low Quiescent Current Mode
+*    VCC:  Positive supply
+*    OUTH: Power Output (pull up)
+*    OUTL: Power Output (pull down)
+*    GND:  Boot capacitor
+*
+*    Date Created: 6th of June, 2012
+*    Created by Micro-Cap 9.0.8.0
+***********************************************************************
+*
+*  This PSPICE behavioral model was developed in compliance with functionality
+*  and typical parameters described in Data Sheet of 
+*  AUIR0815S AUTOMOTIVE GRADE January 24th, 2012. 
+*  There is no modeling of parameters drift with temperature.
+*
+***********************************************************************
+.SUBCKT AUIR0815S CB VEE IN LPM VCC OUTH OUTL GND  
+C2 Vcmd 0 350p
+C3 Lcmd 0 350p
+C4 Pcmd 0 350p
+D4 7 VCC BV6V
+D5 24 VCC BV6V
+D7 26 19 BV6V
+D8 OUTH CB BV6V
+D9 26 OUTH BV6V
+D402 IN VCC BV40V
+D406 LPM VCC BV40V
+D407 GND VCC BV40V
+D408 VEE VCC BV40V
+D409 OUTH VCC BV40V
+Q1 VCC 19 20 IRNPN
+R6 OUTH 2 0.09
+R7 VEE 5 0.18
+R8 11 Lcmd 1e3
+R9 12 Vcmd 1e3
+R10 OUTH 17 75
+R11 19 VCC 30e3
+R12 19 21 30e3
+R13 OUTH CB 6e3
+R14 CB 20 150
+R15 IN 7 100K
+R16 LPM 24 100K
+R18 GND VCC 600e3
+R19 VEE 27 40e3
+R20 27 VCC 40e3
+R23 VEE OUTH 25e3
+R24 29 Pcmd 2e3
+S1 VCC 21 LPMI 0 SBREAK
+S2 27 VEE LPMI 0 SBREAK
+SL OUTL 5 Lcmd 0 SBREAK
+SP VCC 17 Pcmd 0 SBREAK
+SV VCC 2 Vcmd 0 SBREAK
+V1 VDD 0 DC 5 AC 1 0 Pulse 0 5 100n 10n 10n 400n 1u
+X2 7 VCC IN_I COMPARATOR PARAMS: VIL=-4.5 VIH=-2.5 VOL=0 VOH=1.0 ROUT=1 SIGN=1 
+X4 VCC GND UVVCC_N COMPARATOR
++PARAMS: VIL=10.5 VIH=11.7 VOL=0 VOH=1.0 ROUT=1 SIGN=1 
+X7 CB OUTH UVCB_N COMPARATOR PARAMS: VIL=4 VIH=4.3 VOL=0 VOH=1.0 ROUT=1 SIGN=1 
+X9 24 VCC LPMI COMPARATOR PARAMS: VIL=-3.0 VIH=-2.5 VOL=0 VOH=1.0 ROUT=1 SIGN=1 
+X10 IN_I UVVCC_N 29 IR_AND2
+X11 29 UVCB_N 12 IR_AND2
+X12 29 11 IR_INV
+.MODEL SBREAK VSWITCH (ROFF=1E6 RON=1E-3 VOFF=0.0 VON=1.0)
+*** Params not used in spice RL=5G
+.MODEL BV6V D (BV=6)
+.MODEL BV40V D (BV=40)
+.MODEL IRNPN NPN (BF=40)
+.MODEL SBREAK2 VSWITCH (ROFF=1E6 RON=10M VOFF=0.0 VON=1.0)
+.MODEL SBREAK3 VSWITCH (ROFF=100 RON=50 VOFF=0.0 VON=1.0)
+*
+.ENDS AUIR0815S
+*
+*
+.SUBCKT COMPARATOR  INP INM OUT
++PARAMS: VIL=-1 VIH=1 VOL=-10 VOH=10 ROUT=1 SIGN=1 
+C1 0 A 10F
+D1 A 3 D1
+D2 4 A D2
+E2 1 0 VALUE = {.5E7*(VIL+VIH)-1E7*(V(INP)-V(INM))+1E7*V(A)*(VIH-VIL)/(VOH-VOL)}
+E3 5 0 VALUE = {.5*(VOL+VOH)-V(A)*SIGN}
+E4 3 0 VALUE = {.5*(VOH-VOL)}
+E5 4 0 VALUE = {-.5*(VOH-VOL)}
+R1 A 1 1E9
+R2 Out 5 {ROUT}
+.MODEL D1 D (N=.001)
+.MODEL D2 D (N=.001)
+.ENDS COMPARATOR
+*
+*
+.SUBCKT IR_AND2  A B Z
+S1 Z 0 3 0 SBREAK2
+S2 1 Z 3 0 SBREAK3
+S3 1 3 B 0 SBREAK3
+S4 1 3 A 0 SBREAK3
+S5 6 0 B 0 SBREAK2
+S6 3 6 A 0 SBREAK2
+V1 1 0 DC 1 AC 1 0 
+.ENDS IR_AND2
+*
+*
+.SUBCKT IR_INV  A Z
+S1 Z 0 A 0 SBREAK2
+S2 1 Z A 0 SBREAK3
+V1 1 0 DC 1 AC 1 0 
+.ENDS IR_INV
+*
+***  Parts Count
+** Resistor         24
+** Capacitor        7
+** Diode            18
+** NPN              1
+** Macro            7
+** VSpice           4
+** NFV              16
+** S                19
+;$SpiceType=PSPICE

@@ -1,0 +1,936 @@
+**********************************************************************
+*
+*  Copyright (c) International Rectifier
+*
+*  IPS1011/21/31/41/51: Low side switch
+*   
+*  Ports 
+*
+*    IN:  Logic Input 
+*    D:   Drain of the Power MOSFET
+*    S:   Source of the Power MOSFET
+*    Tj:  Junction temperature Volt=°C
+*    Tcase: Case temperature Volt=°C
+*    Tambiant: Ambiant temperature Volt=°C
+*
+*  Created by Pspice Version 7 
+*
+*  Date Created: 06/2006
+*
+**********************************************************************
+*
+* IMPORTANT NOTICE
+*
+* This SPICE model can not be used as a specification for any parameters. The
+* limits are only guanranteed by the datasheet.  It is designed as an additional
+* tool. It shall not substitute to the regular engineering practice of building
+* prototypes, doing worst-case analysis and electrical validation.
+*
+* International Rectifier reserves the right at any time without notice, to 
+* update model information. The models are provided as is, without warranty of 
+* any kind, expressed or implied by IR. Visit specific product pages for 
+* additional information about technical information including datasheet, 
+* availability, etc. 
+*
+***********************************************************************
+*
+*  This model simulates the thermal behavior of only the Rdson. A voltage 
+* coresponding to the ambiant temperature must be applied on Tambiant pin.
+* A 1Gohm resistor must be connected between Tj/Tcase and Tabmiant and Tcase.
+* The thermal model used is the standard mounting : TO220 free air and D2Pack
+* and Dpak standard footprint (see datasheet ). If a heat sink is used, its 
+* thermal model should be connected between Tambiant and Tcase. 
+* If the user do not used the thermal behavior, 25V should be connected to Tj,
+* Tcase and Tambiant.
+* 
+***********************************************************************
+
+
+
+
+
+*************************************************************************************
+*                  IR IPS1011 TO220 Rth=50°C/W
+*************************************************************************************
+.subckt  IPS1011 IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+E_ABM1         $N_0001 0 VALUE { I(V_Isense)    }
+R_R1         Tj $N_0002  0.0068  
+R_R2         $N_0002 $N_0003  0.060  
+R_R3         $N_0003 $N_0004  0.88  
+R_R4         $N_0004 $N_0005  0.303  
+R_R5         $N_0005 Tcase  0.250  
+C_C1         Tambiant $N_0002  678u IC=0 
+C_C2         Tambiant $N_0003  6.2m IC=0 
+C_C3         Tambiant $N_0004  133m IC=0 
+C_C4         Tambiant $N_0005  13.7m IC=0 
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+D_D4         $N_0006 $N_0007 DZ6V_P3 
+V_Isense         $N_0008 S 0V
+D_D6         $N_0009 $N_0010 DZ6V_P3 
+D_D7         $N_0011 $N_0009 DZ6V_P3 
+D_Protection_D1         $N_0016 $N_0028 DPOLY 
+R_Protection_R1         $N_0016 $N_0022  846k  
+R_Protection_R2         $N_0017 $N_0022  846k  
+R_Protection_R3         S $N_0028  2500k  
+M_Protection_M1         $N_0016 $N_0017 $N_0018  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0018 $N_0019 $N_0020  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0020 $N_0021 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0017 $N_0028 $N_0017  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0017 $N_0028 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+C_Protection_C1         S $N_0028  10p IC=0 
+E_E3         D $N_0012 TABLE { ((V(Tj, 0)-25)*64u+2.25m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_Driver_R1         $N_0023 $N_0022  18k  
+M_Driver_M1         $N_0023 $N_0024 $N_0025 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+R_Driver_R4         S $N_0024  135k  
+R_Driver_R3         $N_0024 $N_0026  10.6k  
+D_Driver_D2         S $N_0027 DZ6V_P3 
+D_Driver_D1         S $N_0024 DZ6V_P3 
+M_Driver_M2         $N_0029 $N_0028 $N_0025 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+R_Driver_R5         $N_0029 $N_0027  2k7  
+R_Driver_R2         $N_0027 $N_0023  1k  
+R_Driver_R6         S $N_0025  550  
+R_R10         Tcase $N_0013  25  
+C_C6         Tambiant $N_0013  8 IC=0 
+C_C5         Tambiant Tcase  805m IC=0 
+E_E1         $N_0019 S TABLE { V($N_0001, 0) } 
++ ( (83,5) (84,4.9)(85,0.1)(86,0) )
+R_R6         IN $N_0014  100  
+D_D1         S $N_0014 D_ESD_P3 
+R_R7         S $N_0014  200k  
+D_D2         $N_0015 $N_0022 DZ6V_P3 
+R_R9         S $N_0015  60  
+R_R8         $N_0014 $N_0022  1k9  
+R_R11         $N_0013 Tambiant  25  
+E_E2         $N_0021 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+D_D3         $N_0010 $N_0006 DZ6V_P3 
+D_D5         $N_0007 D DZ6V_P3 
+D_D8         $N_0026 $N_0011 DZ6V_P3 
+D_D9         $N_0026 $N_0027 DZ6V_P3 
+X_HS1         $N_0012 $N_0027 $N_0008 mosp3 PARAMS:sur=7.2
+
+.ends
+
+*************************************************************************************
+*                  IR IPS1011S D2Pak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS1011S IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+E_ABM1         $N_0001 0 VALUE { I(V_Isense)    }
+R_R1         Tj $N_0002  0.0068  
+R_R2         $N_0002 $N_0003  0.060  
+R_R3         $N_0003 $N_0004  0.88  
+R_R4         $N_0004 $N_0005  0.303  
+R_R5         $N_0005 Tcase  0.250  
+C_C1         Tambiant $N_0002  678u IC=0 
+C_C2         Tambiant $N_0003  6.2m IC=0 
+C_C3         Tambiant $N_0004  133m IC=0 
+C_C4         Tambiant $N_0005  13.7m IC=0 
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+D_D4         $N_0006 $N_0007 DZ6V_P3 
+V_Isense         $N_0008 S 0V
+D_D6         $N_0009 $N_0010 DZ6V_P3 
+D_D7         $N_0011 $N_0009 DZ6V_P3 
+D_Protection_D1         $N_0016 $N_0028 DPOLY 
+R_Protection_R1         $N_0016 $N_0022  846k  
+R_Protection_R2         $N_0017 $N_0022  846k  
+R_Protection_R3         S $N_0028  2500k  
+M_Protection_M1         $N_0016 $N_0017 $N_0018  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0018 $N_0019 $N_0020  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0020 $N_0021 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0017 $N_0028 $N_0017  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0017 $N_0028 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+C_Protection_C1         S $N_0028  10p IC=0 
+E_E3         D $N_0012 TABLE { ((V(Tj, 0)-25)*64u+2.25m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_Driver_R1         $N_0023 $N_0022  18k  
+M_Driver_M1         $N_0023 $N_0024 $N_0025 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+R_Driver_R4         S $N_0024  135k  
+R_Driver_R3         $N_0024 $N_0026  10.6k  
+D_Driver_D2         S $N_0027 DZ6V_P3 
+D_Driver_D1         S $N_0024 DZ6V_P3 
+M_Driver_M2         $N_0029 $N_0028 $N_0025 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+R_Driver_R5         $N_0029 $N_0027  2k7  
+R_Driver_R2         $N_0027 $N_0023  1k  
+R_Driver_R6         S $N_0025  550  
+R_R10         Tcase $N_0013  25  
+C_C6         Tambiant $N_0013  8 IC=0 
+C_C5         Tambiant Tcase  805m IC=0 
+E_E1         $N_0019 S TABLE { V($N_0001, 0) } 
++ ( (83,5) (84,4.9)(85,0.1)(86,0) )
+R_R6         IN $N_0014  100  
+D_D1         S $N_0014 D_ESD_P3 
+R_R7         S $N_0014  200k  
+D_D2         $N_0015 $N_0022 DZ6V_P3 
+R_R9         S $N_0015  60  
+R_R8         $N_0014 $N_0022  1k9  
+R_R11         $N_0013 Tambiant  25  
+E_E2         $N_0021 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+D_D3         $N_0010 $N_0006 DZ6V_P3 
+D_D5         $N_0007 D DZ6V_P3 
+D_D8         $N_0026 $N_0011 DZ6V_P3 
+D_D9         $N_0026 $N_0027 DZ6V_P3 
+X_HS1         $N_0012 $N_0027 $N_0008 mosp3 PARAMS:sur=7.2
+
+.ends
+
+*************************************************************************************
+*                  IR IPS1011R DPak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS1011R IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+E_ABM1         $N_0001 0 VALUE { I(V_Isense)    }
+R_R1         Tj $N_0002  0.0068  
+R_R2         $N_0002 $N_0003  0.060  
+R_R3         $N_0003 $N_0004  0.88  
+R_R4         $N_0004 $N_0005  0.303  
+R_R5         $N_0005 Tcase  0.250  
+C_C1         Tambiant $N_0002  678u IC=0 
+C_C2         Tambiant $N_0003  6.2m IC=0 
+C_C3         Tambiant $N_0004  133m IC=0 
+C_C4         Tambiant $N_0005  13.7m IC=0 
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+D_D4         $N_0006 $N_0007 DZ6V_P3 
+V_Isense         $N_0008 S 0V
+D_D6         $N_0009 $N_0010 DZ6V_P3 
+D_D7         $N_0011 $N_0009 DZ6V_P3 
+D_Protection_D1         $N_0016 $N_0028 DPOLY 
+R_Protection_R1         $N_0016 $N_0022  846k  
+R_Protection_R2         $N_0017 $N_0022  846k  
+R_Protection_R3         S $N_0028  2500k  
+M_Protection_M1         $N_0016 $N_0017 $N_0018  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0018 $N_0019 $N_0020  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0020 $N_0021 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0017 $N_0028 $N_0017  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0017 $N_0028 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+C_Protection_C1         S $N_0028  10p IC=0 
+E_E3         D $N_0012 TABLE { ((V(Tj, 0)-25)*64u+2.25m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_Driver_R1         $N_0023 $N_0022  18k  
+M_Driver_M1         $N_0023 $N_0024 $N_0025 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+R_Driver_R4         S $N_0024  135k  
+R_Driver_R3         $N_0024 $N_0026  10.6k  
+D_Driver_D2         S $N_0027 DZ6V_P3 
+D_Driver_D1         S $N_0024 DZ6V_P3 
+M_Driver_M2         $N_0029 $N_0028 $N_0025 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+R_Driver_R5         $N_0029 $N_0027  2k7  
+R_Driver_R2         $N_0027 $N_0023  1k  
+R_Driver_R6         S $N_0025  550  
+R_R10         Tcase $N_0013  25  
+C_C6         Tambiant $N_0013  8 IC=0 
+C_C5         Tambiant Tcase  805m IC=0 
+E_E1         $N_0019 S TABLE { V($N_0001, 0) } 
++ ( (83,5) (84,4.9)(85,0.1)(86,0) )
+R_R6         IN $N_0014  100  
+D_D1         S $N_0014 D_ESD_P3 
+R_R7         S $N_0014  200k  
+D_D2         $N_0015 $N_0022 DZ6V_P3 
+R_R9         S $N_0015  60  
+R_R8         $N_0014 $N_0022  1k9  
+R_R11         $N_0013 Tambiant  25  
+E_E2         $N_0021 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+D_D3         $N_0010 $N_0006 DZ6V_P3 
+D_D5         $N_0007 D DZ6V_P3 
+D_D8         $N_0026 $N_0011 DZ6V_P3 
+D_D9         $N_0026 $N_0027 DZ6V_P3 
+X_HS1         $N_0012 $N_0027 $N_0008 mosp3 PARAMS:sur=7.2
+
+.ends
+
+*************************************************************************************
+*                  IR IPS1021 TO220 Rth=50°C/W
+*************************************************************************************
+.subckt  IPS1021 IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+E_ABM1         $N_0001 0 VALUE { I(V_Isense)    }
+R_R6         IN $N_0002  100  
+R_R8         $N_0002 $N_0026  1k9  
+E_E2         $N_0021 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+E_E3         $N_0019 S TABLE { V($N_0001, 0) } 
++ ( (43,5) (44,4.9)(45,0.1)(46,0) )
+R_R9         S $N_0003  60  
+R_R7         S $N_0002  200k  
+E_E1         D $N_0004 TABLE { ((V(Tj, 0)-25)*128u+5.70m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+C_C1         Tambiant $N_0005  177u IC=0 
+C_C2         Tambiant $N_0006  1.6m IC=0 
+C_C3         Tambiant $N_0007  36.4m IC=0 
+C_C4         Tambiant $N_0008  3.1m IC=0 
+R_R1         Tj $N_0005  0.01  
+R_R2         $N_0005 $N_0006  0.0878  
+R_R3         $N_0006 $N_0007  1.149  
+R_R4         $N_0007 $N_0008  0.44  
+C_C5         Tambiant Tcase  292m IC=0 
+R_R5         $N_0008 Tcase  0.313  
+R_R11         $N_0009 Tambiant  25  
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+R_R10         Tcase $N_0009  25  
+D_Protection_D1         $N_0016 $N_0028 DPOLY 
+R_Protection_R1         $N_0016 $N_0026  846k  
+C_Protection_C1         S $N_0028  10p IC=0 
+R_Protection_R2         $N_0017 $N_0026  846k  
+R_Protection_R3         S $N_0028  2500k  
+M_Protection_M1         $N_0016 $N_0017 $N_0018  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0018 $N_0019 $N_0020  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0020 $N_0021 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0017 $N_0028 $N_0017  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0017 $N_0028 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+C_C6         Tambiant $N_0009  8 IC=0 
+D_D1         S $N_0002 D_ESD_P3 
+D_D2         $N_0003 $N_0026 DZ6V_P3 
+D_D3         $N_0010 $N_0011 DZ6V_P3 
+D_D4         $N_0011 $N_0012 DZ6V_P3 
+D_D5         $N_0012 D DZ6V_P3 
+D_D6         $N_0013 $N_0010 DZ6V_P3 
+D_D7         $N_0014 $N_0013 DZ6V_P3 
+D_D8         $N_0022 $N_0014 DZ6V_P3 
+X_HS1         $N_0004 $N_0025 $N_0015 mosp3 PARAMS:sur=3.87
+R_Driver_R2         $N_0023 $N_0022  10.6k  
+R_Driver_R5         $N_0025 $N_0024  1k  
+R_Driver_R4         $N_0024 $N_0026  18k  
+R_Driver_R8         $N_0027 $N_0025  2k7  
+R_Driver_R6         S $N_0023  135k  
+M_Driver_M2         $N_0027 $N_0028 $N_0029 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+M_Driver_M1         $N_0024 $N_0023 $N_0029 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+D_Driver_D2         S $N_0025 DZ6V_P3 
+D_Driver_D1         S $N_0023 DZ6V_P3 
+R_Driver_R1         S $N_0029  550  
+D_D9         $N_0022 $N_0025 DZ6V_P3 
+V_Isense         $N_0015 S 0V
+
+.ends
+
+*************************************************************************************
+*                  IR IPS1021S D2Pak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS1021S IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+E_ABM1         $N_0001 0 VALUE { I(V_Isense)    }
+R_R6         IN $N_0002  100  
+R_R8         $N_0002 $N_0026  1k9  
+E_E2         $N_0021 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+E_E3         $N_0019 S TABLE { V($N_0001, 0) } 
++ ( (43,5) (44,4.9)(45,0.1)(46,0) )
+R_R9         S $N_0003  60  
+R_R7         S $N_0002  200k  
+E_E1         D $N_0004 TABLE { ((V(Tj, 0)-25)*128u+5.70m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+C_C1         Tambiant $N_0005  177u IC=0 
+C_C2         Tambiant $N_0006  1.6m IC=0 
+C_C3         Tambiant $N_0007  36.4m IC=0 
+C_C4         Tambiant $N_0008  3.1m IC=0 
+R_R1         Tj $N_0005  0.01  
+R_R2         $N_0005 $N_0006  0.0878  
+R_R3         $N_0006 $N_0007  1.149  
+R_R4         $N_0007 $N_0008  0.44  
+C_C5         Tambiant Tcase  292m IC=0 
+R_R5         $N_0008 Tcase  0.313  
+R_R11         $N_0009 Tambiant  25  
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+R_R10         Tcase $N_0009  25  
+D_Protection_D1         $N_0016 $N_0028 DPOLY 
+R_Protection_R1         $N_0016 $N_0026  846k  
+C_Protection_C1         S $N_0028  10p IC=0 
+R_Protection_R2         $N_0017 $N_0026  846k  
+R_Protection_R3         S $N_0028  2500k  
+M_Protection_M1         $N_0016 $N_0017 $N_0018  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0018 $N_0019 $N_0020  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0020 $N_0021 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0017 $N_0028 $N_0017  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0017 $N_0028 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+C_C6         Tambiant $N_0009  8 IC=0 
+D_D1         S $N_0002 D_ESD_P3 
+D_D2         $N_0003 $N_0026 DZ6V_P3 
+D_D3         $N_0010 $N_0011 DZ6V_P3 
+D_D4         $N_0011 $N_0012 DZ6V_P3 
+D_D5         $N_0012 D DZ6V_P3 
+D_D6         $N_0013 $N_0010 DZ6V_P3 
+D_D7         $N_0014 $N_0013 DZ6V_P3 
+D_D8         $N_0022 $N_0014 DZ6V_P3 
+X_HS1         $N_0004 $N_0025 $N_0015 mosp3 PARAMS:sur=3.87
+R_Driver_R2         $N_0023 $N_0022  10.6k  
+R_Driver_R5         $N_0025 $N_0024  1k  
+R_Driver_R4         $N_0024 $N_0026  18k  
+R_Driver_R8         $N_0027 $N_0025  2k7  
+R_Driver_R6         S $N_0023  135k  
+M_Driver_M2         $N_0027 $N_0028 $N_0029 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+M_Driver_M1         $N_0024 $N_0023 $N_0029 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+D_Driver_D2         S $N_0025 DZ6V_P3 
+D_Driver_D1         S $N_0023 DZ6V_P3 
+R_Driver_R1         S $N_0029  550  
+D_D9         $N_0022 $N_0025 DZ6V_P3 
+V_Isense         $N_0015 S 0V
+
+.ends
+
+*************************************************************************************
+*                  IR IPS1021R DPak 50°C/W
+*************************************************************************************
+.subckt  IPS1021R IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+E_ABM1         $N_0001 0 VALUE { I(V_Isense)    }
+R_R6         IN $N_0002  100  
+R_R8         $N_0002 $N_0026  1k9  
+E_E2         $N_0021 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+E_E3         $N_0019 S TABLE { V($N_0001, 0) } 
++ ( (43,5) (44,4.9)(45,0.1)(46,0) )
+R_R9         S $N_0003  60  
+R_R7         S $N_0002  200k  
+E_E1         D $N_0004 TABLE { ((V(Tj, 0)-25)*128u+5.70m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+C_C1         Tambiant $N_0005  177u IC=0 
+C_C2         Tambiant $N_0006  1.6m IC=0 
+C_C3         Tambiant $N_0007  36.4m IC=0 
+C_C4         Tambiant $N_0008  3.1m IC=0 
+R_R1         Tj $N_0005  0.01  
+R_R2         $N_0005 $N_0006  0.0878  
+R_R3         $N_0006 $N_0007  1.149  
+R_R4         $N_0007 $N_0008  0.44  
+C_C5         Tambiant Tcase  292m IC=0 
+R_R5         $N_0008 Tcase  0.313  
+R_R11         $N_0009 Tambiant  25  
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+R_R10         Tcase $N_0009  25  
+D_Protection_D1         $N_0016 $N_0028 DPOLY 
+R_Protection_R1         $N_0016 $N_0026  846k  
+C_Protection_C1         S $N_0028  10p IC=0 
+R_Protection_R2         $N_0017 $N_0026  846k  
+R_Protection_R3         S $N_0028  2500k  
+M_Protection_M1         $N_0016 $N_0017 $N_0018  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0018 $N_0019 $N_0020  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0020 $N_0021 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0017 $N_0028 $N_0017  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0017 $N_0028 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+C_C6         Tambiant $N_0009  8 IC=0 
+D_D1         S $N_0002 D_ESD_P3 
+D_D2         $N_0003 $N_0026 DZ6V_P3 
+D_D3         $N_0010 $N_0011 DZ6V_P3 
+D_D4         $N_0011 $N_0012 DZ6V_P3 
+D_D5         $N_0012 D DZ6V_P3 
+D_D6         $N_0013 $N_0010 DZ6V_P3 
+D_D7         $N_0014 $N_0013 DZ6V_P3 
+D_D8         $N_0022 $N_0014 DZ6V_P3 
+X_HS1         $N_0004 $N_0025 $N_0015 mosp3 PARAMS:sur=3.87
+R_Driver_R2         $N_0023 $N_0022  10.6k  
+R_Driver_R5         $N_0025 $N_0024  1k  
+R_Driver_R4         $N_0024 $N_0026  18k  
+R_Driver_R8         $N_0027 $N_0025  2k7  
+R_Driver_R6         S $N_0023  135k  
+M_Driver_M2         $N_0027 $N_0028 $N_0029 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+M_Driver_M1         $N_0024 $N_0023 $N_0029 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+D_Driver_D2         S $N_0025 DZ6V_P3 
+D_Driver_D1         S $N_0023 DZ6V_P3 
+R_Driver_R1         S $N_0029  550  
+D_D9         $N_0022 $N_0025 DZ6V_P3 
+V_Isense         $N_0015 S 0V
+
+.ends
+
+*************************************************************************************
+*                  IR IPS1031 TO220 Rth=50°C/W
+*************************************************************************************
+.subckt  IPS1031 IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+D_Protection_D1         $N_0016 $N_0025 DPOLY 
+R_Protection_R1         $N_0016 $N_0028  846k  
+C_Protection_C1         S $N_0025  10p IC=0 
+M_Protection_M1         $N_0016 $N_0017 $N_0018  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0018 $N_0019 $N_0020  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0020 $N_0021 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0017 $N_0025 $N_0017  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0017 $N_0025 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+R_Protection_R2         $N_0017 $N_0028  846k  
+R_Protection_R3         S $N_0025  2500k  
+E_ABM1         $N_0001 0 VALUE { I(V_Isense)    }
+C_C1         Tambiant $N_0002  100u IC=0 
+C_C2         Tambiant $N_0003  0.856m IC=0 
+C_C3         Tambiant $N_0004  18.6m IC=0 
+C_C4         Tambiant $N_0005  2m IC=0 
+C_C5         Tambiant Tcase  176m IC=0 
+R_R1         Tj $N_0002  0.0167  
+R_R2         $N_0002 $N_0003  0.146  
+R_R3         $N_0003 $N_0004  1.66  
+R_R4         $N_0004 $N_0005  0.732  
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+R_R5         $N_0005 Tcase  0.442  
+E_E1         $N_0019 S TABLE { V($N_0001, 0) } 
++ ( (17,5) (18,4.9)(19,0.1)(20,0) )
+E_E2         $N_0021 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+V_Isense         $N_0006 S 0V
+E_E3         D $N_0007 TABLE { ((V(Tj, 0)-25)*256u+5.67m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_R8         $N_0008 $N_0028  1k9  
+R_R9         S $N_0009  60  
+R_R7         S $N_0008  200k  
+R_R6         IN $N_0008  100  
+R_R10         Tcase $N_0010  25  
+R_R11         $N_0010 Tambiant  25  
+C_C6         Tambiant $N_0010  8 IC=0 
+D_D1         S $N_0008 D_ESD_P3 
+D_D2         $N_0009 $N_0028 DZ6V_P3 
+D_D3         $N_0011 $N_0012 DZ6V_P3 
+D_D4         $N_0012 $N_0013 DZ6V_P3 
+D_D5         $N_0013 D DZ6V_P3 
+D_D6         $N_0014 $N_0011 DZ6V_P3 
+D_D7         $N_0015 $N_0014 DZ6V_P3 
+D_D8         $N_0029 $N_0015 DZ6V_P3 
+X_HS1         $N_0007 $N_0022 $N_0006 mosp3 PARAMS:sur=1.64
+R_Driver_R5         $N_0023 $N_0022  2k7  
+R_Driver_R4         S $N_0024  135k  
+M_Driver_M2         $N_0023 $N_0025 $N_0026 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+M_Driver_M1         $N_0027 $N_0024 $N_0026 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+D_Driver_D2         S $N_0022 DZ6V_P3 
+D_Driver_D1         S $N_0024 DZ6V_P3 
+R_Driver_R6         S $N_0026  550  
+R_Driver_R1         $N_0027 $N_0028  18k  
+R_Driver_R3         $N_0024 $N_0029  10.6k  
+R_Driver_R2         $N_0022 $N_0027  1k  
+D_D9         $N_0029 $N_0022 DZ6V_P3
+
+.ends
+
+*************************************************************************************
+*                  IR IPS1031S D2Pak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS1031S IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+D_Protection_D1         $N_0016 $N_0025 DPOLY 
+R_Protection_R1         $N_0016 $N_0028  846k  
+C_Protection_C1         S $N_0025  10p IC=0 
+M_Protection_M1         $N_0016 $N_0017 $N_0018  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0018 $N_0019 $N_0020  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0020 $N_0021 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0017 $N_0025 $N_0017  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0017 $N_0025 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+R_Protection_R2         $N_0017 $N_0028  846k  
+R_Protection_R3         S $N_0025  2500k  
+E_ABM1         $N_0001 0 VALUE { I(V_Isense)    }
+C_C1         Tambiant $N_0002  100u IC=0 
+C_C2         Tambiant $N_0003  0.856m IC=0 
+C_C3         Tambiant $N_0004  18.6m IC=0 
+C_C4         Tambiant $N_0005  2m IC=0 
+C_C5         Tambiant Tcase  176m IC=0 
+R_R1         Tj $N_0002  0.0167  
+R_R2         $N_0002 $N_0003  0.146  
+R_R3         $N_0003 $N_0004  1.66  
+R_R4         $N_0004 $N_0005  0.732  
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+R_R5         $N_0005 Tcase  0.442  
+E_E1         $N_0019 S TABLE { V($N_0001, 0) } 
++ ( (17,5) (18,4.9)(19,0.1)(20,0) )
+E_E2         $N_0021 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+V_Isense         $N_0006 S 0V
+E_E3         D $N_0007 TABLE { ((V(Tj, 0)-25)*256u+5.67m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_R8         $N_0008 $N_0028  1k9  
+R_R9         S $N_0009  60  
+R_R7         S $N_0008  200k  
+R_R6         IN $N_0008  100  
+R_R10         Tcase $N_0010  25  
+R_R11         $N_0010 Tambiant  25  
+C_C6         Tambiant $N_0010  8 IC=0 
+D_D1         S $N_0008 D_ESD_P3 
+D_D2         $N_0009 $N_0028 DZ6V_P3 
+D_D3         $N_0011 $N_0012 DZ6V_P3 
+D_D4         $N_0012 $N_0013 DZ6V_P3 
+D_D5         $N_0013 D DZ6V_P3 
+D_D6         $N_0014 $N_0011 DZ6V_P3 
+D_D7         $N_0015 $N_0014 DZ6V_P3 
+D_D8         $N_0029 $N_0015 DZ6V_P3 
+X_HS1         $N_0007 $N_0022 $N_0006 mosp3 PARAMS:sur=1.64
+R_Driver_R5         $N_0023 $N_0022  2k7  
+R_Driver_R4         S $N_0024  135k  
+M_Driver_M2         $N_0023 $N_0025 $N_0026 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+M_Driver_M1         $N_0027 $N_0024 $N_0026 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+D_Driver_D2         S $N_0022 DZ6V_P3 
+D_Driver_D1         S $N_0024 DZ6V_P3 
+R_Driver_R6         S $N_0026  550  
+R_Driver_R1         $N_0027 $N_0028  18k  
+R_Driver_R3         $N_0024 $N_0029  10.6k  
+R_Driver_R2         $N_0022 $N_0027  1k  
+D_D9         $N_0029 $N_0022 DZ6V_P3
+
+.ends
+
+*************************************************************************************
+*                  IR IPS1031R DPak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS1031R IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+D_Protection_D1         $N_0016 $N_0025 DPOLY 
+R_Protection_R1         $N_0016 $N_0028  846k  
+C_Protection_C1         S $N_0025  10p IC=0 
+M_Protection_M1         $N_0016 $N_0017 $N_0018  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0018 $N_0019 $N_0020  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0020 $N_0021 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0017 $N_0025 $N_0017  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0017 $N_0025 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+R_Protection_R2         $N_0017 $N_0028  846k  
+R_Protection_R3         S $N_0025  2500k  
+E_ABM1         $N_0001 0 VALUE { I(V_Isense)    }
+C_C1         Tambiant $N_0002  100u IC=0 
+C_C2         Tambiant $N_0003  0.856m IC=0 
+C_C3         Tambiant $N_0004  18.6m IC=0 
+C_C4         Tambiant $N_0005  2m IC=0 
+C_C5         Tambiant Tcase  176m IC=0 
+R_R1         Tj $N_0002  0.0167  
+R_R2         $N_0002 $N_0003  0.146  
+R_R3         $N_0003 $N_0004  1.66  
+R_R4         $N_0004 $N_0005  0.732  
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+R_R5         $N_0005 Tcase  0.442  
+E_E1         $N_0019 S TABLE { V($N_0001, 0) } 
++ ( (17,5) (18,4.9)(19,0.1)(20,0) )
+E_E2         $N_0021 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+V_Isense         $N_0006 S 0V
+E_E3         D $N_0007 TABLE { ((V(Tj, 0)-25)*256u+5.67m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_R8         $N_0008 $N_0028  1k9  
+R_R9         S $N_0009  60  
+R_R7         S $N_0008  200k  
+R_R6         IN $N_0008  100  
+R_R10         Tcase $N_0010  25  
+R_R11         $N_0010 Tambiant  25  
+C_C6         Tambiant $N_0010  8 IC=0 
+D_D1         S $N_0008 D_ESD_P3 
+D_D2         $N_0009 $N_0028 DZ6V_P3 
+D_D3         $N_0011 $N_0012 DZ6V_P3 
+D_D4         $N_0012 $N_0013 DZ6V_P3 
+D_D5         $N_0013 D DZ6V_P3 
+D_D6         $N_0014 $N_0011 DZ6V_P3 
+D_D7         $N_0015 $N_0014 DZ6V_P3 
+D_D8         $N_0029 $N_0015 DZ6V_P3 
+X_HS1         $N_0007 $N_0022 $N_0006 mosp3 PARAMS:sur=1.64
+R_Driver_R5         $N_0023 $N_0022  2k7  
+R_Driver_R4         S $N_0024  135k  
+M_Driver_M2         $N_0023 $N_0025 $N_0026 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+M_Driver_M1         $N_0027 $N_0024 $N_0026 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+D_Driver_D2         S $N_0022 DZ6V_P3 
+D_Driver_D1         S $N_0024 DZ6V_P3 
+R_Driver_R6         S $N_0026  550  
+R_Driver_R1         $N_0027 $N_0028  18k  
+R_Driver_R3         $N_0024 $N_0029  10.6k  
+R_Driver_R2         $N_0022 $N_0027  1k  
+D_D9         $N_0029 $N_0022 DZ6V_P3
+
+.ends
+
+*************************************************************************************
+*                  IR IPS1041L SOT223 Rth=100°C/W
+*************************************************************************************
+.subckt  IPS1041L IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+R_R1         Tj $N_0001  0.01  
+R_R2         $N_0001 $N_0002  0.474  
+R_R3         $N_0002 $N_0003  4.34  
+R_R4         $N_0003 $N_0004  15  
+R_R5         $N_0004 Tcase  35  
+C_C1         Tambiant $N_0001  0.15m IC=0 
+C_C2         Tambiant $N_0002  0.6m IC=0 
+C_C3         Tambiant $N_0003  10m IC=0 
+C_C4         Tambiant $N_0004  1 IC=0 
+R_R9         $N_0005 $N_0023  1k9  
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+E_E1         $N_0020 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+E_ABM1         $N_0006 0 VALUE { I(V_Isense)    }
+E_E2         $N_0018 S TABLE { V($N_0006, 0) } 
++ ( (5.5,5) (6,4.9)(6.5,0.1)(7,0) )
+D_Protection_D1         $N_0015 $N_0028 DPOLY 
+R_Protection_R1         $N_0015 $N_0023  846k  
+C_Protection_C1         S $N_0028  10p IC=0 
+M_Protection_M1         $N_0015 $N_0016 $N_0017  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0017 $N_0018 $N_0019  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0019 $N_0020 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0016 $N_0028 $N_0016  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0016 $N_0028 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+R_Protection_R2         $N_0016 $N_0023  846k  
+R_Protection_R3         S $N_0028  2500k  
+R_R8         S $N_0005  200k  
+R_R10         S $N_0007  60  
+E_E3         D $N_0008 TABLE { ((V(Tj, 0)-25)*512u+18.1m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+V_Isense         $N_0009 S 0V
+R_R6         Tcase Tambiant  50  
+C_C5         Tambiant Tcase  0.4 IC=0 
+R_R7         IN $N_0005  100  
+D_D1         S $N_0005 D_ESD_P3 
+D_D2         $N_0007 $N_0023 DZ6V_P3 
+D_D3         $N_0010 $N_0011 DZ6V_P3 
+D_D4         $N_0011 $N_0012 DZ6V_P3 
+D_D5         $N_0012 D DZ6V_P3 
+D_D6         $N_0013 $N_0010 DZ6V_P3 
+D_D7         $N_0014 $N_0013 DZ6V_P3 
+D_D8         $N_0025 $N_0014 DZ6V_P3 
+D_Driver_D2         S $N_0021 DZ6V_P3 
+D_Driver_D1         S $N_0022 DZ6V_P3 
+R_Driver_R1         $N_0024 $N_0023  18k  
+R_Driver_R2         $N_0021 $N_0024  1k  
+R_Driver_R3         $N_0022 $N_0025  10.6k  
+R_Driver_R5         $N_0026 $N_0021  2k7  
+M_Driver_M1         $N_0024 $N_0022 $N_0027 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+M_Driver_M2         $N_0026 $N_0028 $N_0027 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+R_Driver_R6         S $N_0027  550  
+R_Driver_R4         S $N_0022  135k  
+X_HS1         $N_0008 $N_0021 $N_0009 mosp3 PARAMS:sur=0.89
+D_D9         $N_0025 $N_0021 DZ6V_P3
+
+.ends
+
+*************************************************************************************
+*                  IR IPS1051L SOT223 Rth=100°C/W
+*************************************************************************************
+.subckt  IPS1051L IN D S Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+E_E1         $N_0020 S TABLE { V(Tj, 0) } 
++ ( (163,5) (164,4.9)(165,0.1)(166,0) )
+E_ABM1         $N_0001 0 VALUE { I(V_Isense)    }
+E_E2         $N_0018 S TABLE { V($N_0001, 0) } 
++ ( (2.7,5) (2.9,4.9)(3,0.1)(3.3,0) )
+R_R7         S $N_0002  200k  
+R_R9         S $N_0003  60  
+R_R8         $N_0002 $N_0023  1k9  
+V_Isense         $N_0004 S 0V
+E_E3         D $N_0005 TABLE { ((V(Tj, 0)-25)*1m+25.3m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_R6         IN $N_0002  100  
+R_R1         Tj $N_0006  0.01  
+R_R2         $N_0006 $N_0007  0.474  
+R_R4         $N_0009 $N_0008  15  
+R_R5         $N_0008 Tcase  35  
+C_C6         Tambiant $N_0006  0.2m IC=0 
+C_C7         Tambiant $N_0007  0.4m IC=0 
+C_C8         Tambiant $N_0009  20m IC=0 
+C_C9         Tambiant $N_0008  1 IC=0 
+C_C10         Tambiant Tcase  0.4 IC=0 
+R_R3         $N_0007 $N_0009  4.34  
+G_ABMI1         Tambiant Tj VALUE { (V(D)-V(S))*I(V_Isense)    }
+R_R25         Tcase Tambiant  50  
+D_Protection_D1         $N_0015 $N_0028 DPOLY 
+R_Protection_R1         $N_0015 $N_0023  846k  
+C_Protection_C1         S $N_0028  10p IC=0 
+M_Protection_M1         $N_0015 $N_0016 $N_0017  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M2         $N_0017 $N_0018 $N_0019  0  ENH L={1.5*1u} W={5*1u} AD=
++ {5*7p}  PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M3         $N_0019 $N_0020 S  0  ENH L={1.5*1u} W={5*1u} AD={5*7p}
++   PD={5*2u+13u} AS={5*7p} PS={5*2u+13u}
+M_Protection_M4         $N_0016 $N_0028 $N_0016  0  ENH L={1.5*1u} W={2*1u} AD=
++ {2*7p}  PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+M_Protection_M5         $N_0016 $N_0028 S  0  ENH L={1.5*1u} W={2*1u} AD={2*7p}
++   PD={2*2u+13u} AS={2*7p} PS={2*2u+13u}
+R_Protection_R2         $N_0016 $N_0023  846k  
+R_Protection_R3         S $N_0028  2500k  
+D_Driver_D2         S $N_0021 DZ6V_P3 
+D_Driver_D1         S $N_0022 DZ6V_P3 
+R_Driver_R1         $N_0024 $N_0023  18k  
+R_Driver_R2         $N_0021 $N_0024  1k  
+R_Driver_R3         $N_0022 $N_0025  10.6k  
+R_Driver_R4         S $N_0022  135k  
+R_Driver_R5         $N_0026 $N_0021  2k7  
+M_Driver_M1         $N_0024 $N_0022 $N_0027 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+M_Driver_M2         $N_0026 $N_0028 $N_0027 S  ENH  L={2*1u} W={100*1u} AD=
++ {100*7p} PD={100*2u+13u} AS={100*7p} PS={100*2u+13u}
+R_Driver_R6         S $N_0027  550  
+D_D1         S $N_0002 D_ESD_P3 
+D_D2         $N_0003 $N_0023 DZ6V_P3 
+D_D3         $N_0010 $N_0011 DZ6V_P3 
+D_D4         $N_0011 $N_0012 DZ6V_P3 
+D_D5         $N_0012 D DZ6V_P3 
+D_D6         $N_0013 $N_0010 DZ6V_P3 
+D_D8         $N_0025 $N_0014 DZ6V_P3 
+X_HS1         $N_0005 $N_0021 $N_0004 mosp3 PARAMS:sur=0.42
+D_D9         $N_0025 $N_0021 DZ6V_P3 
+D_D7         $N_0014 $N_0013 DZ6V_P3
+
+.ends
+
+*************************************************************************************
+*                  IR P3 40V SUBCIRCUITS 
+*************************************************************************************
+.subckt  MosP3 DR GA SO PARAMS:sur=1
+
+*** components model
+
+
+.MODEL  VMOS5           NMOS            LEVEL=2
++       (VTO=1.6 LOT=0.16)
++       VTO=1.6    
++       GAMMA=3        PHI=0.7         PB=0.8
++       CGSO=0.15P      CGDO=0        CGBO=0         RSH=270
++       CJ=3E-4        MJ=0.42         CJSW=750P      MJSW=0.4
++       JS=2.5E-6      TOX=1000E-10     NSUB=1E17      NFS=2E11
++       XJ=1U          LD=0            UO=450         UCRIT=8E4
++       UEXP=0.15      VMAX=5E4        NEFF=3         XQC=0.6         
+
+*VMOS1 JFET PART OF THE VERTICAL POWER MOS *
+.MODEL  VMOS1          NMOS            LEVEL=1
++       VTO=-1.82      LAMBDA=0.02
++       GAMMA=0.71     PHI=0.74        PB=0.8
++       CGSO=0p      CGDO=250P       CGBO=0
++       JS=2.5E-6      TOX=530E-10     NSUB=2.2E16     NFS=2E11
++       XJ=1U          LD=0            KP=41.8E-6      UCRIT=8E4
++       UEXP=0         VMAX=5E4        NEFF=3          XQC=0.5001
+
+* Schematics Netlist *
+ 
+M_HS1_1         N2 GA N1 SO  VMOS1  L={1*1.3u}  W={{sur*4544}*60u} AD=0 AS=0 PD=
++ {{4544}*120u} PS={{4544}*120u}
+M_HS1_2         N1 GA SO SO  VMOS5 L={1*2u} W={{sur*32000}*55u}  AD={{sur*32000}*170p}
++  PD={{sur*32000}*55u} NRD=0 NRS=0
+R_HS1_R1         N2 DR  {16m/sur}  TC1=0.01
+R		N2  N1  {1k/sur}
+.ends MosP3
+
+.MODEL  DZ6V_P3 D (IS=1E-16 BV=5.6 RS=140 TBV1=1.1E-4)
+
+.MODEL  D_ESD_P3 D (IS=1E-16 BV=6.2 RS=17 TBV1=1.1E-4)
+
+.MODEL  DPOLY D	(is=1e-11 n=2 XTI=0.02 rs=200 bv=6.6)
+
+*ENH: LATERAL LOW VOLTAGE ENHANCEMENT NMOS TRANSISTOR 	*
+
+.MODEL  ENH            NMOS             LEVEL=1
++       (VTO=0.4       LOT=0.025        DEV=0.002) 
++       GAMMA=0.85      PHI=0.8          PB=0.8      LAMBDA=0.01
++       CGSO=190P      CGDO=190P	CGBO=380P     
++       CJ=6.5E-4      MJ=0.45          CJSW=100P     MJSW=0.4
++       JS=2.5E-6      TOX=220E-10      NSUB=1.5E17   NFS=2E11
++       XJ=0.1U        LD=0.16U         UO=220        UCRIT=8E4
++       UEXP=0         VMAX=5E4         NEFF=3.0      XQC=1

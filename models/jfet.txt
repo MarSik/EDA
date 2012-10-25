@@ -1,0 +1,60 @@
+.MODEL BF245A NJF(VTO=-1.7372 BETA=1.16621E-3 BETATCE=-0.5 LAMBDA=1.77211E-2
++ RD=9.01678 RS=9.01678 CGS=2.20000E-12 CGD=2.20000E-12 PB=7.80988E-1 IS=2.91797E-16 XTI=3 AF=1
++ FC=0.5 N=1 NR=2 MFG=PHILIPS)
+
+.MODEL BF245B NJF(VTO=-2.3085 BETA=1.09045E-3 BETATCE=-0.5 LAMBDA=2.31754E-2
++ RD=7.77648 RS=7.77648 CGS=2.00000E-12 CGD=2.20000E-12 PB=9.91494E-1 IS=2.59121E-16 XTI=3 AF=1
++ FC=0.5 N=1 NR=2 MFG=PHILIPS)
+
+.MODEL BF245C NJF(VTO=-5.0014 BETA=5.43157E-4 BETATCE=-0.5 LAMBDA=2.71505E-2
++ RD=1.20869E1 RS=1.20869E1 CGS=2.00000E-12 CGD=2.00000E-12 PB=1.24659 IS=3.64346E-16 XTI=3 AF=1
++ FC=0.5 N=1 NR=2 MFG=PHILIPS)
+
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: J111.PRM          Date: Oct 1992
+*
+.MODEL  J111   NJF
++             VTO = -5.3638E+000
++            BETA = 3.25000E-003
++          LAMBDA = 2.00000E-002
++              RD = 2.42642E+000
++              RS = 2.42642E+000
++              IS = 2.17605E-015
++            CGS  = 1.10000E-011
++            CGD  = 1.30000E-011
++              PB = 7.01712E-001
++              FC = 5.00000E-001
+*Parameter with default value: FC
+
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: J112.PRM          Date: Oct 1992
+*
+.MODEL  J112   NJF
++             VTO = -2.3303E+000
++            BETA = 5.97264E-003
++          LAMBDA = 2.31986E-002
++              RD = 2.29075E+000
++              RS = 2.29075E+000
++              IS = 8.87988E-016
++            CGS  = 1.05000E-011
++            CGD  = 1.20000E-011
++              PB = 6.09944E-001
++              FC = 5.00000E-001
+*Parameter with default value: FC
+
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: J113.PRM          Date: Oct 1992
+*
+.MODEL  J113   NJF
++             VTO = -1.2854E+000
++            BETA = 9.25964E-003
++          LAMBDA = 3.03839E-002
++              RD = 1.30170E+000
++              RS = 1.30170E+000
++              IS = 9.86870E-016
++            CGS  = 1.05000E-011
++            CGD  = 1.20000E-011
++              PB = 5.04493E-001
++              FC = 5.00000E-001
+*Parameter with default value: FC
+

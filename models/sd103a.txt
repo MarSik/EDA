@@ -1,0 +1,79 @@
+PSpice Modell für SD103A, SD103AW, SD103AWS  Schottky Diode
+
+Unser Model in Internet ist fehlerhaft.
+http://www.vishay.com/docs/85835/85835.txt
+
+Es folgt ein korrigiertes und erweitertes Modell:
+
+
+****************************************
+* (c)1999 Thomatronik GmbH *
+* info@thomatronik.de *
+* *
+* Author: Arpad Buermen *
+* Arpad.Burmen@ieee.org *
+****************************************
+* modified and corrected
+* 2005  Vishay 
+* Hartmut Harmel
+****************************************
+
+.SUBCKT SD103A 1 2
+.MODEL SD D (
++ N=1.03
++ IS=1.0E-007
++ RS=0.78
++ EG=0.69
++ XTI=2
++ CJO=2.8E-011
++ VJ=0.2
++ M=.34
++ FC=0.5
++ TT=0.8E-008
++ BV=40
++ IBV=0.001
++ KF=0
++ AF=1 )
+.MODEL PND D (
++ N=4.55878
++ IS=1E-9
++ RS=0.047093
++ EG=1.11
++ XTI=3 )
+*additional
+.model AD D Is=0.18u N=1100 Rs=.01 
+D1 1 2 SD
+D2 1 2 PND
+D3 2 1 AD
+.ENDS
+
+Das Modell funktioniert bei Zimmertemperatur recht gut. Bei höheren Temperaturen wahrscheinlich nicht mehr.
+Die Gehäuseinduktivitäten wurden nicht berücksichtigt 
+
+Von den angelieferten Bauteilen SD103AW wurden von Herrn Muth die Fluss- und Sperrkennlinien sowie der C(U)-Verlauf von jeweils 4 Bauteilen gemessen.
+
+
+
+
+
+
+
+
+
+Hartmut Harmel
+VSG ET-HN
+Tel.: 2460 / 2053
+Datum: 20. Juni 2005
+
+
+
+Seite 1
+
+Die hier enthaltenen Informationen sind Eigentum der VISHAY Semiconductor. Sie dürfen unautorisierten Personen nicht zugänglich gemacht werden.
+The information included herein is property of VISHAY Semiconduktor. It shall not be revealed to unauthorized persons
+
+
+
+
+
+

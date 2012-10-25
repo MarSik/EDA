@@ -1,0 +1,1269 @@
+**********************************************************************
+*
+*  Copyright (c) International Rectifier
+*
+*  IPS6011/21/31/41: High side switch
+*   
+*  Ports 
+*
+*    GND: Logic Ground 
+*    IN:  Logic input
+*    VCC: Power supply
+*    Dg:  Diagnosis output
+*    OUT: Power output
+*    Tj:  Junction temperature
+*    Tcase: Case temperature Volt=°C
+*    Tambiant: Ambiant temperature Volt=°C
+*
+*  Created by Pspice Version 7 
+*
+*  Date Created: 06/2006
+*
+**********************************************************************
+*
+* IMPORTANT NOTICE
+*
+* This SPICE model can not be used as a specification for any parameters. The
+* limits are only guanranteed by the datasheet.  It is designed as an additional
+* tool. It shall not substitute to the regular engineering practice of building
+* prototypes, doing worst-case analysis and electrical validation.
+*
+* International Rectifier reserves the right at any time without notice, to 
+* update model information. The models are provided as is, without warranty of 
+* any kind, expressed or implied by IR. Visit specific product pages for 
+* additional information about technical information including datasheet, 
+* availability, etc. 
+*
+***********************************************************************
+*
+*  This model simulates the thermal behavior of only the Rdson. A voltage 
+* coresponding to the ambiant temperature must be applied on Tambiant pin.
+* A 1Gohm resistor must be connected between Tj/Tcase and Tabmiant and Tcase.
+* The thermal model used is the standard mounting : TO220 free air and D2Pack
+* and Dpak standard footprint (see datasheet ). If a heat sink is used, its 
+* thermal model should be connected between Tambiant and Tcase. 
+* If the user do not used the thermal behavior, 25V should be connected to Tj,
+* Tcase and Tambiant.
+* 
+***********************************************************************
+
+
+*************************************************************************************
+*                  IR IPS6011 TO220 Rth=50°C/W
+*************************************************************************************
+.subckt  IPS6011 GND IN VCC DG OUT Tj Tcase Tambiant
+
+*** components model
+
+
+* Schematics Netlist *
+
+
+R_R2         $N_0002 $N_0001  0.068  
+C_C1         Tambiant $N_0002  600u IC=0 
+C_C2         Tambiant $N_0001  7.5m IC=0 
+C_C3         Tambiant $N_0003  180m IC=0 
+C_C4         Tambiant $N_0004  60m IC=0 
+C_C5         Tambiant Tcase  800m IC=0 
+C_C6         Tambiant $N_0005  8  
+R_R7         Tambiant $N_0005  25  
+E_E1         $N_0006 0 VALUE { V($N_0007, $N_0008)*1000 }
+R_R9         $N_0009 $N_0007  1k  
+E_ABM1         $N_0010 0 VALUE { I(V_Iout)    }
+E_E2         $N_0011 Out TABLE { V($N_0012, 0) } 
++ ( (0,0) (6,6) )
+G_ABMI1         Tambiant Tj VALUE { (V(Vcc)-V(Out))*I(V_Isense)    }
+E_E3         Vcc $N_0013 TABLE { ((V(Tj, 0)-25)*70.4u+3.6m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_R1         Tj $N_0002  0.007  
+R_R3         $N_0001 $N_0003  0.96  
+R_R4         $N_0003 $N_0004  0.25  
+R_R5         $N_0004 Tcase  0.2  
+R_R6         $N_0005 Tcase  25  
+V_Iout         $N_0014 $N_0015 0V
+R_R11         $N_0006 $N_0012  1k  
+M_M1         DG $N_0038 GND_Int GND_Int  ENH  L={2*1u} W={93*1u} AD={93*7p} PD=
++ {93*2u+13u} AS={93*7p} PS={93*2u+13u}
+C_Hyst_IN_C1         GND_Int $N_0020  10p  
+E_Hyst_IN_E1         $N_0021 GND_Int TABLE { V($N_0020, GND_Int) } 
++ ( (0,2.5) (1,2) )
+E_Hyst_IN_E2         Logic_IN1 GND_Int TABLE { V(IN, $N_0021) } 
++ ( (-10m,0) (10m,1) )
+R_Hyst_IN_R1         Logic_IN1 $N_0020  500  
+E_E4         $N_0009 0 VALUE { V($N_0039, GND_Int)*25m }
+G_ABM2I1         Vcc GND_Int VALUE { (V(Logic_IN1)-V(GND_Int))*2.2mA    }
+E_U_V_E2         $N_0040 GND_Int TABLE { V(Vcc, $N_0022) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_U_V_E1         $N_0023 GND TABLE { V($N_0024, GND) } 
++ ( (0,4) (1,4.5) )
+R_U_V_R1         $N_0040 $N_0024  500  
+C_U_V_C1         GND $N_0024  10p  
+R_U_V_R2         $N_0023 $N_0022  1000  
+C_U_V_C2         GND $N_0022  10p  
+E_OverT_E2         Logic_Tj1 GND_Int TABLE { V(Tj, $N_0025) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_OverT_E1         $N_0026 0 TABLE { V($N_0027, 0) } 
++ ( (0,165) (1,158) )
+R_OverT_R1         Logic_Tj1 $N_0027  500  
+C_OverT_C1         0 $N_0027  10p  
+R_OverT_R2         $N_0026 $N_0025  1k  
+C_OverT_C2         0 $N_0025  1n  
+V_Isense         $N_0016 Out 0V
+D_Clamp_40V_D5         $N_0028 $N_0029 DZ6V_P3 
+D_Clamp_40V_D4         $N_0030 $N_0028 DZ6V_P3 
+D_Clamp_40V_D2         $N_0031 $N_0032 DZ6V_P3 
+D_Clamp_40V_D3         $N_0032 $N_0030 DZ6V_P3 
+D_Clamp_40V_D1         $N_0033 $N_0031 DZ6V_P3 
+D_Clamp_40V_D6         $N_0029 Vcc DZ6V_P3 
+D_Clamp_40V_D7         $N_0033 $N_0034 DPOLY 
+R_R8         GND Vcc  5600k  
+R_R10         $N_0010 $N_0008  100  
+R_R12         $N_0011 $N_0017  1.5k  
+R_R13         Out $N_0015  8  
+R_R14         $N_0011 $N_0034  1.5k  
+R_R15         $N_0018 $N_0034  100k  
+R_R16         GND_Int IN  150K  
+M_M2         GND $N_0019 GND_Int GND_Int  ENH  L={2*1u} W={263*1u} AD={263*7p}
++  PD={263*2u+13u} AS={263*7p} PS={263*2u+13u}
+R_R17         $N_0019 Vcc  1000k  
+X_HS2         $N_0013 $N_0034 $N_0016 mosp3 PARAMS:sur=7.5
+X_HS1         $N_0013 $N_0017 $N_0014 mosp3 PARAMS:sur=3.29m
+D_D1         Out $N_0011 DZ6V_P3 
+D_D2         GND $N_0018 DZ43V_P3 
+D_D3         $N_0016 $N_0013 DZ43V_P3 
+D_D4         GND_Int IN D_ESD_P3 
+D_D5         GND_Int DG DZ6V_P3 
+C_C7         0 $N_0007  50n  
+C_C8         0 $N_0008  1n  
+C_C9         0 $N_0012  2n  
+E_OpL_Off_E1         Logic_OpL_Off GND_Int TABLE { V(Out, GND_Int) } 
++ ( (2.99,0)(3.01,1) )
+E_S_C_E1         Logic_S_C GND_Int TABLE { V(Vcc, Out) } 
++ ( (2.99,0)(3.01,1) )
+E_OpL_On_E1         Logic_OpL_On GND_Int TABLE { V(Vcc, Out) } 
++ ( (0.0199,1) (0.020,0) )
+R_R18         GND_Int Out  800k  
+E_Logic_E5         $N_0037 GND_Int VALUE 
++ {V($N_0035,GND_Int)+V($N_0036,GND_Int)}
+E_Logic_E2         $N_0038 GND_Int TABLE { V($N_0037, GND_Int) } 
++ ( (0.5,0) (0.9,4.8) )
+E_Logic_E1         $N_0035 GND_Int VALUE { V(Logic_IN1,
++  GND_Int)*V(Logic_Tj1)+V(Logic_OpL_Off)*(1-V(Logic_IN1)) }
+R_Logic_R2         GND_Int Logic_IN1  10000k  
+R_Logic_R6         GND_Int Logic_OpL_On  10000k  
+R_Logic_R5         GND_Int Logic_S_C  10000k  
+E_Logic_E3         $N_0039 GND_Int VALUE { (V($N_0040,
++  GND_Int)*V(Logic_IN1)*(1-V(Logic_Tj1))) }
+E_Logic_E4         $N_0036 GND_Int VALUE { V(Logic_S_C,
++  GND_Int)*V(Logic_IN1)+V(Logic_OpL_On)*V(Logic_IN1) }
+R_Logic_R1         GND_Int $N_0040  10000k  
+R_Logic_R3         GND_Int Logic_OpL_Off  10000k  
+R_Logic_R4         GND_Int Logic_Tj1  10000k  
+D_D6         GND_Int Vcc DZ43V_P3 
+
+
+.ends
+
+*************************************************************************************
+*                  IR IPS6011S D2Pak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS6011S GND IN VCC DG OUT Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+
+R_R2         $N_0002 $N_0001  0.068  
+C_C1         Tambiant $N_0002  600u IC=0 
+C_C2         Tambiant $N_0001  7.5m IC=0 
+C_C3         Tambiant $N_0003  180m IC=0 
+C_C4         Tambiant $N_0004  60m IC=0 
+C_C5         Tambiant Tcase  800m IC=0 
+C_C6         Tambiant $N_0005  8  
+R_R7         Tambiant $N_0005  25  
+E_E1         $N_0006 0 VALUE { V($N_0007, $N_0008)*1000 }
+R_R9         $N_0009 $N_0007  1k  
+E_ABM1         $N_0010 0 VALUE { I(V_Iout)    }
+E_E2         $N_0011 Out TABLE { V($N_0012, 0) } 
++ ( (0,0) (6,6) )
+G_ABMI1         Tambiant Tj VALUE { (V(Vcc)-V(Out))*I(V_Isense)    }
+E_E3         Vcc $N_0013 TABLE { ((V(Tj, 0)-25)*70.4u+3.6m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_R1         Tj $N_0002  0.007  
+R_R3         $N_0001 $N_0003  0.96  
+R_R4         $N_0003 $N_0004  0.25  
+R_R5         $N_0004 Tcase  0.2  
+R_R6         $N_0005 Tcase  25  
+V_Iout         $N_0014 $N_0015 0V
+R_R11         $N_0006 $N_0012  1k  
+M_M1         DG $N_0038 GND_Int GND_Int  ENH  L={2*1u} W={93*1u} AD={93*7p} PD=
++ {93*2u+13u} AS={93*7p} PS={93*2u+13u}
+C_Hyst_IN_C1         GND_Int $N_0020  10p  
+E_Hyst_IN_E1         $N_0021 GND_Int TABLE { V($N_0020, GND_Int) } 
++ ( (0,2.5) (1,2) )
+E_Hyst_IN_E2         Logic_IN1 GND_Int TABLE { V(IN, $N_0021) } 
++ ( (-10m,0) (10m,1) )
+R_Hyst_IN_R1         Logic_IN1 $N_0020  500  
+E_E4         $N_0009 0 VALUE { V($N_0039, GND_Int)*25m }
+G_ABM2I1         Vcc GND_Int VALUE { (V(Logic_IN1)-V(GND_Int))*2.2mA    }
+E_U_V_E2         $N_0040 GND_Int TABLE { V(Vcc, $N_0022) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_U_V_E1         $N_0023 GND TABLE { V($N_0024, GND) } 
++ ( (0,4) (1,4.5) )
+R_U_V_R1         $N_0040 $N_0024  500  
+C_U_V_C1         GND $N_0024  10p  
+R_U_V_R2         $N_0023 $N_0022  1000  
+C_U_V_C2         GND $N_0022  10p  
+E_OverT_E2         Logic_Tj1 GND_Int TABLE { V(Tj, $N_0025) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_OverT_E1         $N_0026 0 TABLE { V($N_0027, 0) } 
++ ( (0,165) (1,158) )
+R_OverT_R1         Logic_Tj1 $N_0027  500  
+C_OverT_C1         0 $N_0027  10p  
+R_OverT_R2         $N_0026 $N_0025  1k  
+C_OverT_C2         0 $N_0025  1n  
+V_Isense         $N_0016 Out 0V
+D_Clamp_40V_D5         $N_0028 $N_0029 DZ6V_P3 
+D_Clamp_40V_D4         $N_0030 $N_0028 DZ6V_P3 
+D_Clamp_40V_D2         $N_0031 $N_0032 DZ6V_P3 
+D_Clamp_40V_D3         $N_0032 $N_0030 DZ6V_P3 
+D_Clamp_40V_D1         $N_0033 $N_0031 DZ6V_P3 
+D_Clamp_40V_D6         $N_0029 Vcc DZ6V_P3 
+D_Clamp_40V_D7         $N_0033 $N_0034 DPOLY 
+R_R8         GND Vcc  5600k  
+R_R10         $N_0010 $N_0008  100  
+R_R12         $N_0011 $N_0017  1.5k  
+R_R13         Out $N_0015  8  
+R_R14         $N_0011 $N_0034  1.5k  
+R_R15         $N_0018 $N_0034  100k  
+R_R16         GND_Int IN  150K  
+M_M2         GND $N_0019 GND_Int GND_Int  ENH  L={2*1u} W={263*1u} AD={263*7p}
++  PD={263*2u+13u} AS={263*7p} PS={263*2u+13u}
+R_R17         $N_0019 Vcc  1000k  
+X_HS2         $N_0013 $N_0034 $N_0016 mosp3 PARAMS:sur=7.5
+X_HS1         $N_0013 $N_0017 $N_0014 mosp3 PARAMS:sur=3.29m
+D_D1         Out $N_0011 DZ6V_P3 
+D_D2         GND $N_0018 DZ43V_P3 
+D_D3         $N_0016 $N_0013 DZ43V_P3 
+D_D4         GND_Int IN D_ESD_P3 
+D_D5         GND_Int DG DZ6V_P3 
+C_C7         0 $N_0007  50n  
+C_C8         0 $N_0008  1n  
+C_C9         0 $N_0012  2n  
+E_OpL_Off_E1         Logic_OpL_Off GND_Int TABLE { V(Out, GND_Int) } 
++ ( (2.99,0)(3.01,1) )
+E_S_C_E1         Logic_S_C GND_Int TABLE { V(Vcc, Out) } 
++ ( (2.99,0)(3.01,1) )
+E_OpL_On_E1         Logic_OpL_On GND_Int TABLE { V(Vcc, Out) } 
++ ( (0.0199,1) (0.020,0) )
+R_R18         GND_Int Out  800k  
+E_Logic_E5         $N_0037 GND_Int VALUE 
++ {V($N_0035,GND_Int)+V($N_0036,GND_Int)}
+E_Logic_E2         $N_0038 GND_Int TABLE { V($N_0037, GND_Int) } 
++ ( (0.5,0) (0.9,4.8) )
+E_Logic_E1         $N_0035 GND_Int VALUE { V(Logic_IN1,
++  GND_Int)*V(Logic_Tj1)+V(Logic_OpL_Off)*(1-V(Logic_IN1)) }
+R_Logic_R2         GND_Int Logic_IN1  10000k  
+R_Logic_R6         GND_Int Logic_OpL_On  10000k  
+R_Logic_R5         GND_Int Logic_S_C  10000k  
+E_Logic_E3         $N_0039 GND_Int VALUE { (V($N_0040,
++  GND_Int)*V(Logic_IN1)*(1-V(Logic_Tj1))) }
+E_Logic_E4         $N_0036 GND_Int VALUE { V(Logic_S_C,
++  GND_Int)*V(Logic_IN1)+V(Logic_OpL_On)*V(Logic_IN1) }
+R_Logic_R1         GND_Int $N_0040  10000k  
+R_Logic_R3         GND_Int Logic_OpL_Off  10000k  
+R_Logic_R4         GND_Int Logic_Tj1  10000k  
+D_D6         GND_Int Vcc DZ43V_P3
+
+.ends
+
+*************************************************************************************
+*                  IR IPS6011R DPak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS6011R GND IN VCC DG OUT Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+
+R_R2         $N_0002 $N_0001  0.068  
+C_C1         Tambiant $N_0002  600u IC=0 
+C_C2         Tambiant $N_0001  7.5m IC=0 
+C_C3         Tambiant $N_0003  180m IC=0 
+C_C4         Tambiant $N_0004  60m IC=0 
+C_C5         Tambiant Tcase  800m IC=0 
+C_C6         Tambiant $N_0005  8  
+R_R7         Tambiant $N_0005  25  
+E_E1         $N_0006 0 VALUE { V($N_0007, $N_0008)*1000 }
+R_R9         $N_0009 $N_0007  1k  
+E_ABM1         $N_0010 0 VALUE { I(V_Iout)    }
+E_E2         $N_0011 Out TABLE { V($N_0012, 0) } 
++ ( (0,0) (6,6) )
+G_ABMI1         Tambiant Tj VALUE { (V(Vcc)-V(Out))*I(V_Isense)    }
+E_E3         Vcc $N_0013 TABLE { ((V(Tj, 0)-25)*70.4u+3.6m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_R1         Tj $N_0002  0.007  
+R_R3         $N_0001 $N_0003  0.96  
+R_R4         $N_0003 $N_0004  0.25  
+R_R5         $N_0004 Tcase  0.2  
+R_R6         $N_0005 Tcase  25  
+V_Iout         $N_0014 $N_0015 0V
+R_R11         $N_0006 $N_0012  1k  
+M_M1         DG $N_0038 GND_Int GND_Int  ENH  L={2*1u} W={93*1u} AD={93*7p} PD=
++ {93*2u+13u} AS={93*7p} PS={93*2u+13u}
+C_Hyst_IN_C1         GND_Int $N_0020  10p  
+E_Hyst_IN_E1         $N_0021 GND_Int TABLE { V($N_0020, GND_Int) } 
++ ( (0,2.5) (1,2) )
+E_Hyst_IN_E2         Logic_IN1 GND_Int TABLE { V(IN, $N_0021) } 
++ ( (-10m,0) (10m,1) )
+R_Hyst_IN_R1         Logic_IN1 $N_0020  500  
+E_E4         $N_0009 0 VALUE { V($N_0039, GND_Int)*25m }
+G_ABM2I1         Vcc GND_Int VALUE { (V(Logic_IN1)-V(GND_Int))*2.2mA    }
+E_U_V_E2         $N_0040 GND_Int TABLE { V(Vcc, $N_0022) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_U_V_E1         $N_0023 GND TABLE { V($N_0024, GND) } 
++ ( (0,4) (1,4.5) )
+R_U_V_R1         $N_0040 $N_0024  500  
+C_U_V_C1         GND $N_0024  10p  
+R_U_V_R2         $N_0023 $N_0022  1000  
+C_U_V_C2         GND $N_0022  10p  
+E_OverT_E2         Logic_Tj1 GND_Int TABLE { V(Tj, $N_0025) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_OverT_E1         $N_0026 0 TABLE { V($N_0027, 0) } 
++ ( (0,165) (1,158) )
+R_OverT_R1         Logic_Tj1 $N_0027  500  
+C_OverT_C1         0 $N_0027  10p  
+R_OverT_R2         $N_0026 $N_0025  1k  
+C_OverT_C2         0 $N_0025  1n  
+V_Isense         $N_0016 Out 0V
+D_Clamp_40V_D5         $N_0028 $N_0029 DZ6V_P3 
+D_Clamp_40V_D4         $N_0030 $N_0028 DZ6V_P3 
+D_Clamp_40V_D2         $N_0031 $N_0032 DZ6V_P3 
+D_Clamp_40V_D3         $N_0032 $N_0030 DZ6V_P3 
+D_Clamp_40V_D1         $N_0033 $N_0031 DZ6V_P3 
+D_Clamp_40V_D6         $N_0029 Vcc DZ6V_P3 
+D_Clamp_40V_D7         $N_0033 $N_0034 DPOLY 
+R_R8         GND Vcc  5600k  
+R_R10         $N_0010 $N_0008  100  
+R_R12         $N_0011 $N_0017  1.5k  
+R_R13         Out $N_0015  8  
+R_R14         $N_0011 $N_0034  1.5k  
+R_R15         $N_0018 $N_0034  100k  
+R_R16         GND_Int IN  150K  
+M_M2         GND $N_0019 GND_Int GND_Int  ENH  L={2*1u} W={263*1u} AD={263*7p}
++  PD={263*2u+13u} AS={263*7p} PS={263*2u+13u}
+R_R17         $N_0019 Vcc  1000k  
+X_HS2         $N_0013 $N_0034 $N_0016 mosp3 PARAMS:sur=7.5
+X_HS1         $N_0013 $N_0017 $N_0014 mosp3 PARAMS:sur=3.29m
+D_D1         Out $N_0011 DZ6V_P3 
+D_D2         GND $N_0018 DZ43V_P3 
+D_D3         $N_0016 $N_0013 DZ43V_P3 
+D_D4         GND_Int IN D_ESD_P3 
+D_D5         GND_Int DG DZ6V_P3 
+C_C7         0 $N_0007  50n  
+C_C8         0 $N_0008  1n  
+C_C9         0 $N_0012  2n  
+E_OpL_Off_E1         Logic_OpL_Off GND_Int TABLE { V(Out, GND_Int) } 
++ ( (2.99,0)(3.01,1) )
+E_S_C_E1         Logic_S_C GND_Int TABLE { V(Vcc, Out) } 
++ ( (2.99,0)(3.01,1) )
+E_OpL_On_E1         Logic_OpL_On GND_Int TABLE { V(Vcc, Out) } 
++ ( (0.0199,1) (0.020,0) )
+R_R18         GND_Int Out  800k  
+E_Logic_E5         $N_0037 GND_Int VALUE 
++ {V($N_0035,GND_Int)+V($N_0036,GND_Int)}
+E_Logic_E2         $N_0038 GND_Int TABLE { V($N_0037, GND_Int) } 
++ ( (0.5,0) (0.9,4.8) )
+E_Logic_E1         $N_0035 GND_Int VALUE { V(Logic_IN1,
++  GND_Int)*V(Logic_Tj1)+V(Logic_OpL_Off)*(1-V(Logic_IN1)) }
+R_Logic_R2         GND_Int Logic_IN1  10000k  
+R_Logic_R6         GND_Int Logic_OpL_On  10000k  
+R_Logic_R5         GND_Int Logic_S_C  10000k  
+E_Logic_E3         $N_0039 GND_Int VALUE { (V($N_0040,
++  GND_Int)*V(Logic_IN1)*(1-V(Logic_Tj1))) }
+E_Logic_E4         $N_0036 GND_Int VALUE { V(Logic_S_C,
++  GND_Int)*V(Logic_IN1)+V(Logic_OpL_On)*V(Logic_IN1) }
+R_Logic_R1         GND_Int $N_0040  10000k  
+R_Logic_R3         GND_Int Logic_OpL_Off  10000k  
+R_Logic_R4         GND_Int Logic_Tj1  10000k  
+D_D6         GND_Int Vcc DZ43V_P3
+
+.ends
+
+*************************************************************************************
+*                  IR IPS6021 TO220 Rth=50°C/W
+*************************************************************************************
+.subckt  IPS6021 GND IN VCC DG OUT Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+
+C_C6         Tambiant $N_0001  8  
+R_R7         Tambiant $N_0001  25  
+E_E1         $N_0002 0 VALUE { V($N_0003, $N_0004)*1000 }
+R_R9         $N_0005 $N_0003  1k  
+E_ABM1         $N_0006 0 VALUE { I(V_Iout)*1.3    }
+E_E2         $N_0007 Out TABLE { V($N_0008, 0) } 
++ ( (0,0) (6,6) )
+G_ABMI1         Tambiant Tj VALUE { (V(Vcc)-V(Out))*I(V_Isense)    }
+R_R6         $N_0001 Tcase  25  
+V_Iout         $N_0009 $N_0010 0V
+R_R11         $N_0002 $N_0008  1k  
+M_M1         DG $N_0038 GND_Int GND_Int  ENH  L={2*1u} W={93*1u} AD={93*7p} PD=
++ {93*2u+13u} AS={93*7p} PS={93*2u+13u}
+C_Hyst_IN_C1         GND_Int $N_0020  10p  
+E_Hyst_IN_E1         $N_0021 GND_Int TABLE { V($N_0020, GND_Int) } 
++ ( (0,2.5) (1,2) )
+E_Hyst_IN_E2         Logic_IN1 GND_Int TABLE { V(IN, $N_0021) } 
++ ( (-10m,0) (10m,1) )
+R_Hyst_IN_R1         Logic_IN1 $N_0020  500  
+G_ABM2I1         Vcc GND_Int VALUE { (V(Logic_IN1)-V(GND_Int))*2.2mA    }
+E_U_V_E2         $N_0040 GND_Int TABLE { V(Vcc, $N_0022) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_U_V_E1         $N_0023 GND TABLE { V($N_0024, GND) } 
++ ( (0,4) (1,4.5) )
+R_U_V_R1         $N_0040 $N_0024  500  
+C_U_V_C1         GND $N_0024  10p  
+R_U_V_R2         $N_0023 $N_0022  1000  
+C_U_V_C2         GND $N_0022  10p  
+E_OverT_E2         Logic_Tj1 GND_Int TABLE { V(Tj, $N_0025) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_OverT_E1         $N_0026 0 TABLE { V($N_0027, 0) } 
++ ( (0,165) (1,158) )
+R_OverT_R1         Logic_Tj1 $N_0027  500  
+C_OverT_C1         0 $N_0027  10p  
+R_OverT_R2         $N_0026 $N_0025  1k  
+C_OverT_C2         0 $N_0025  1n  
+V_Isense         $N_0011 Out 0V
+D_Clamp_40V_D5         $N_0028 $N_0029 DZ6V_P3 
+D_Clamp_40V_D4         $N_0030 $N_0028 DZ6V_P3 
+D_Clamp_40V_D2         $N_0031 $N_0032 DZ6V_P3 
+D_Clamp_40V_D3         $N_0032 $N_0030 DZ6V_P3 
+D_Clamp_40V_D1         $N_0033 $N_0031 DZ6V_P3 
+D_Clamp_40V_D6         $N_0029 Vcc DZ6V_P3 
+D_Clamp_40V_D7         $N_0033 $N_0034 DPOLY 
+R_R8         GND Vcc  5600k  
+R_R10         $N_0006 $N_0004  100  
+R_R12         $N_0007 $N_0012  1.5k  
+R_R14         $N_0007 $N_0034  1.5k  
+R_R15         $N_0013 $N_0034  100k  
+R_R16         GND_Int IN  150K  
+M_M2         GND $N_0014 GND_Int GND_Int  ENH  L={2*1u} W={263*1u} AD={263*7p}
++  PD={263*2u+13u} AS={263*7p} PS={263*2u+13u}
+R_R17         $N_0014 Vcc  1000k  
+X_HS1         $N_0015 $N_0012 $N_0009 mosp3 PARAMS:sur=3.29m
+C_C8         0 $N_0004  1n  
+C_C9         0 $N_0008  2n  
+E_OpL_Off_E1         Logic_OpL_Off GND_Int TABLE { V(Out, GND_Int) } 
++ ( (2.99,0)(3.01,1) )
+E_S_C_E1         Logic_S_C GND_Int TABLE { V(Vcc, Out) } 
++ ( (2.99,0)(3.01,1) )
+E_OpL_On_E1         Logic_OpL_On GND_Int TABLE { V(Vcc, Out) } 
++ ( (0.0199,1) (0.020,0) )
+R_R18         GND_Int Out  800k  
+E_Logic_E5         $N_0037 GND_Int VALUE 
++ {V($N_0035,GND_Int)+V($N_0036,GND_Int)}
+E_Logic_E2         $N_0038 GND_Int TABLE { V($N_0037, GND_Int) } 
++ ( (0.5,0) (0.9,4.8) )
+E_Logic_E1         $N_0035 GND_Int VALUE { V(Logic_IN1,
++  GND_Int)*V(Logic_Tj1)+V(Logic_OpL_Off)*(1-V(Logic_IN1)) }
+R_Logic_R2         GND_Int Logic_IN1  10000k  
+R_Logic_R6         GND_Int Logic_OpL_On  10000k  
+R_Logic_R5         GND_Int Logic_S_C  10000k  
+E_Logic_E3         $N_0039 GND_Int VALUE { (V($N_0040,
++  GND_Int)*V(Logic_IN1)*(1-V(Logic_Tj1))) }
+E_Logic_E4         $N_0036 GND_Int VALUE { V(Logic_S_C,
++  GND_Int)*V(Logic_IN1)+V(Logic_OpL_On)*V(Logic_IN1) }
+R_Logic_R1         GND_Int $N_0040  10000k  
+R_Logic_R3         GND_Int Logic_OpL_Off  10000k  
+R_Logic_R4         GND_Int Logic_Tj1  10000k  
+D_D1         Out $N_0007 DZ6V_P3 
+D_D2         GND $N_0013 DZ43V_P3 
+D_D3         $N_0011 $N_0015 DZ43V_P3 
+D_D4         GND_Int IN D_ESD_P3 
+D_D5         GND_Int DG DZ6V_P3 
+D_D6         GND_Int Vcc DZ43V_P3 
+E_E3         Vcc $N_0015 TABLE { ((V(Tj, 0)-25)*153.6u+6.37m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+E_E4         $N_0005 0 VALUE { V($N_0039, GND_Int)*45m }
+R_R1         Tj $N_0016  0.016  
+R_R2         $N_0016 $N_0017  0.14  
+R_R3         $N_0017 $N_0018  1.71  
+R_R4         $N_0018 $N_0019  0.44  
+R_R5         $N_0019 Tcase  0.286  
+C_C1         Tambiant $N_0016  180u IC=0 
+C_C2         Tambiant $N_0017  2m IC=0 
+C_C3         Tambiant $N_0018  70m IC=0 
+C_C4         Tambiant $N_0019  10m IC=0 
+C_C5         Tambiant Tcase  350m IC=0 
+X_HS2         $N_0015 $N_0034 $N_0011 mosp3 PARAMS:sur=3.15
+R_R13         Out $N_0010  3.5  
+C_C7         0 $N_0003  22n
+
+.ends
+
+*************************************************************************************
+*                  IR IPS6021S D2Pak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS6021S GND IN VCC DG OUT Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+
+C_C6         Tambiant $N_0001  8  
+R_R7         Tambiant $N_0001  25  
+E_E1         $N_0002 0 VALUE { V($N_0003, $N_0004)*1000 }
+R_R9         $N_0005 $N_0003  1k  
+E_ABM1         $N_0006 0 VALUE { I(V_Iout)*1.3    }
+E_E2         $N_0007 Out TABLE { V($N_0008, 0) } 
++ ( (0,0) (6,6) )
+G_ABMI1         Tambiant Tj VALUE { (V(Vcc)-V(Out))*I(V_Isense)    }
+R_R6         $N_0001 Tcase  25  
+V_Iout         $N_0009 $N_0010 0V
+R_R11         $N_0002 $N_0008  1k  
+M_M1         DG $N_0038 GND_Int GND_Int  ENH  L={2*1u} W={93*1u} AD={93*7p} PD=
++ {93*2u+13u} AS={93*7p} PS={93*2u+13u}
+C_Hyst_IN_C1         GND_Int $N_0020  10p  
+E_Hyst_IN_E1         $N_0021 GND_Int TABLE { V($N_0020, GND_Int) } 
++ ( (0,2.5) (1,2) )
+E_Hyst_IN_E2         Logic_IN1 GND_Int TABLE { V(IN, $N_0021) } 
++ ( (-10m,0) (10m,1) )
+R_Hyst_IN_R1         Logic_IN1 $N_0020  500  
+G_ABM2I1         Vcc GND_Int VALUE { (V(Logic_IN1)-V(GND_Int))*2.2mA    }
+E_U_V_E2         $N_0040 GND_Int TABLE { V(Vcc, $N_0022) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_U_V_E1         $N_0023 GND TABLE { V($N_0024, GND) } 
++ ( (0,4) (1,4.5) )
+R_U_V_R1         $N_0040 $N_0024  500  
+C_U_V_C1         GND $N_0024  10p  
+R_U_V_R2         $N_0023 $N_0022  1000  
+C_U_V_C2         GND $N_0022  10p  
+E_OverT_E2         Logic_Tj1 GND_Int TABLE { V(Tj, $N_0025) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_OverT_E1         $N_0026 0 TABLE { V($N_0027, 0) } 
++ ( (0,165) (1,158) )
+R_OverT_R1         Logic_Tj1 $N_0027  500  
+C_OverT_C1         0 $N_0027  10p  
+R_OverT_R2         $N_0026 $N_0025  1k  
+C_OverT_C2         0 $N_0025  1n  
+V_Isense         $N_0011 Out 0V
+D_Clamp_40V_D5         $N_0028 $N_0029 DZ6V_P3 
+D_Clamp_40V_D4         $N_0030 $N_0028 DZ6V_P3 
+D_Clamp_40V_D2         $N_0031 $N_0032 DZ6V_P3 
+D_Clamp_40V_D3         $N_0032 $N_0030 DZ6V_P3 
+D_Clamp_40V_D1         $N_0033 $N_0031 DZ6V_P3 
+D_Clamp_40V_D6         $N_0029 Vcc DZ6V_P3 
+D_Clamp_40V_D7         $N_0033 $N_0034 DPOLY 
+R_R8         GND Vcc  5600k  
+R_R10         $N_0006 $N_0004  100  
+R_R12         $N_0007 $N_0012  1.5k  
+R_R14         $N_0007 $N_0034  1.5k  
+R_R15         $N_0013 $N_0034  100k  
+R_R16         GND_Int IN  150K  
+M_M2         GND $N_0014 GND_Int GND_Int  ENH  L={2*1u} W={263*1u} AD={263*7p}
++  PD={263*2u+13u} AS={263*7p} PS={263*2u+13u}
+R_R17         $N_0014 Vcc  1000k  
+X_HS1         $N_0015 $N_0012 $N_0009 mosp3 PARAMS:sur=3.29m
+C_C8         0 $N_0004  1n  
+C_C9         0 $N_0008  2n  
+E_OpL_Off_E1         Logic_OpL_Off GND_Int TABLE { V(Out, GND_Int) } 
++ ( (2.99,0)(3.01,1) )
+E_S_C_E1         Logic_S_C GND_Int TABLE { V(Vcc, Out) } 
++ ( (2.99,0)(3.01,1) )
+E_OpL_On_E1         Logic_OpL_On GND_Int TABLE { V(Vcc, Out) } 
++ ( (0.0199,1) (0.020,0) )
+R_R18         GND_Int Out  800k  
+E_Logic_E5         $N_0037 GND_Int VALUE 
++ {V($N_0035,GND_Int)+V($N_0036,GND_Int)}
+E_Logic_E2         $N_0038 GND_Int TABLE { V($N_0037, GND_Int) } 
++ ( (0.5,0) (0.9,4.8) )
+E_Logic_E1         $N_0035 GND_Int VALUE { V(Logic_IN1,
++  GND_Int)*V(Logic_Tj1)+V(Logic_OpL_Off)*(1-V(Logic_IN1)) }
+R_Logic_R2         GND_Int Logic_IN1  10000k  
+R_Logic_R6         GND_Int Logic_OpL_On  10000k  
+R_Logic_R5         GND_Int Logic_S_C  10000k  
+E_Logic_E3         $N_0039 GND_Int VALUE { (V($N_0040,
++  GND_Int)*V(Logic_IN1)*(1-V(Logic_Tj1))) }
+E_Logic_E4         $N_0036 GND_Int VALUE { V(Logic_S_C,
++  GND_Int)*V(Logic_IN1)+V(Logic_OpL_On)*V(Logic_IN1) }
+R_Logic_R1         GND_Int $N_0040  10000k  
+R_Logic_R3         GND_Int Logic_OpL_Off  10000k  
+R_Logic_R4         GND_Int Logic_Tj1  10000k  
+D_D1         Out $N_0007 DZ6V_P3 
+D_D2         GND $N_0013 DZ43V_P3 
+D_D3         $N_0011 $N_0015 DZ43V_P3 
+D_D4         GND_Int IN D_ESD_P3 
+D_D5         GND_Int DG DZ6V_P3 
+D_D6         GND_Int Vcc DZ43V_P3 
+E_E3         Vcc $N_0015 TABLE { ((V(Tj, 0)-25)*153.6u+6.37m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+E_E4         $N_0005 0 VALUE { V($N_0039, GND_Int)*45m }
+R_R1         Tj $N_0016  0.016  
+R_R2         $N_0016 $N_0017  0.14  
+R_R3         $N_0017 $N_0018  1.71  
+R_R4         $N_0018 $N_0019  0.44  
+R_R5         $N_0019 Tcase  0.286  
+C_C1         Tambiant $N_0016  180u IC=0 
+C_C2         Tambiant $N_0017  2m IC=0 
+C_C3         Tambiant $N_0018  70m IC=0 
+C_C4         Tambiant $N_0019  10m IC=0 
+C_C5         Tambiant Tcase  350m IC=0 
+X_HS2         $N_0015 $N_0034 $N_0011 mosp3 PARAMS:sur=3.15
+R_R13         Out $N_0010  3.5  
+C_C7         0 $N_0003  22n
+
+.ends
+
+*************************************************************************************
+*                  IR IPS6021R DPak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS6021R GND IN VCC DG OUT Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+
+C_C6         Tambiant $N_0001  8  
+R_R7         Tambiant $N_0001  25  
+E_E1         $N_0002 0 VALUE { V($N_0003, $N_0004)*1000 }
+R_R9         $N_0005 $N_0003  1k  
+E_ABM1         $N_0006 0 VALUE { I(V_Iout)*1.3    }
+E_E2         $N_0007 Out TABLE { V($N_0008, 0) } 
++ ( (0,0) (6,6) )
+G_ABMI1         Tambiant Tj VALUE { (V(Vcc)-V(Out))*I(V_Isense)    }
+R_R6         $N_0001 Tcase  25  
+V_Iout         $N_0009 $N_0010 0V
+R_R11         $N_0002 $N_0008  1k  
+M_M1         DG $N_0038 GND_Int GND_Int  ENH  L={2*1u} W={93*1u} AD={93*7p} PD=
++ {93*2u+13u} AS={93*7p} PS={93*2u+13u}
+C_Hyst_IN_C1         GND_Int $N_0020  10p  
+E_Hyst_IN_E1         $N_0021 GND_Int TABLE { V($N_0020, GND_Int) } 
++ ( (0,2.5) (1,2) )
+E_Hyst_IN_E2         Logic_IN1 GND_Int TABLE { V(IN, $N_0021) } 
++ ( (-10m,0) (10m,1) )
+R_Hyst_IN_R1         Logic_IN1 $N_0020  500  
+G_ABM2I1         Vcc GND_Int VALUE { (V(Logic_IN1)-V(GND_Int))*2.2mA    }
+E_U_V_E2         $N_0040 GND_Int TABLE { V(Vcc, $N_0022) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_U_V_E1         $N_0023 GND TABLE { V($N_0024, GND) } 
++ ( (0,4) (1,4.5) )
+R_U_V_R1         $N_0040 $N_0024  500  
+C_U_V_C1         GND $N_0024  10p  
+R_U_V_R2         $N_0023 $N_0022  1000  
+C_U_V_C2         GND $N_0022  10p  
+E_OverT_E2         Logic_Tj1 GND_Int TABLE { V(Tj, $N_0025) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_OverT_E1         $N_0026 0 TABLE { V($N_0027, 0) } 
++ ( (0,165) (1,158) )
+R_OverT_R1         Logic_Tj1 $N_0027  500  
+C_OverT_C1         0 $N_0027  10p  
+R_OverT_R2         $N_0026 $N_0025  1k  
+C_OverT_C2         0 $N_0025  1n  
+V_Isense         $N_0011 Out 0V
+D_Clamp_40V_D5         $N_0028 $N_0029 DZ6V_P3 
+D_Clamp_40V_D4         $N_0030 $N_0028 DZ6V_P3 
+D_Clamp_40V_D2         $N_0031 $N_0032 DZ6V_P3 
+D_Clamp_40V_D3         $N_0032 $N_0030 DZ6V_P3 
+D_Clamp_40V_D1         $N_0033 $N_0031 DZ6V_P3 
+D_Clamp_40V_D6         $N_0029 Vcc DZ6V_P3 
+D_Clamp_40V_D7         $N_0033 $N_0034 DPOLY 
+R_R8         GND Vcc  5600k  
+R_R10         $N_0006 $N_0004  100  
+R_R12         $N_0007 $N_0012  1.5k  
+R_R14         $N_0007 $N_0034  1.5k  
+R_R15         $N_0013 $N_0034  100k  
+R_R16         GND_Int IN  150K  
+M_M2         GND $N_0014 GND_Int GND_Int  ENH  L={2*1u} W={263*1u} AD={263*7p}
++  PD={263*2u+13u} AS={263*7p} PS={263*2u+13u}
+R_R17         $N_0014 Vcc  1000k  
+X_HS1         $N_0015 $N_0012 $N_0009 mosp3 PARAMS:sur=3.29m
+C_C8         0 $N_0004  1n  
+C_C9         0 $N_0008  2n  
+E_OpL_Off_E1         Logic_OpL_Off GND_Int TABLE { V(Out, GND_Int) } 
++ ( (2.99,0)(3.01,1) )
+E_S_C_E1         Logic_S_C GND_Int TABLE { V(Vcc, Out) } 
++ ( (2.99,0)(3.01,1) )
+E_OpL_On_E1         Logic_OpL_On GND_Int TABLE { V(Vcc, Out) } 
++ ( (0.0199,1) (0.020,0) )
+R_R18         GND_Int Out  800k  
+E_Logic_E5         $N_0037 GND_Int VALUE 
++ {V($N_0035,GND_Int)+V($N_0036,GND_Int)}
+E_Logic_E2         $N_0038 GND_Int TABLE { V($N_0037, GND_Int) } 
++ ( (0.5,0) (0.9,4.8) )
+E_Logic_E1         $N_0035 GND_Int VALUE { V(Logic_IN1,
++  GND_Int)*V(Logic_Tj1)+V(Logic_OpL_Off)*(1-V(Logic_IN1)) }
+R_Logic_R2         GND_Int Logic_IN1  10000k  
+R_Logic_R6         GND_Int Logic_OpL_On  10000k  
+R_Logic_R5         GND_Int Logic_S_C  10000k  
+E_Logic_E3         $N_0039 GND_Int VALUE { (V($N_0040,
++  GND_Int)*V(Logic_IN1)*(1-V(Logic_Tj1))) }
+E_Logic_E4         $N_0036 GND_Int VALUE { V(Logic_S_C,
++  GND_Int)*V(Logic_IN1)+V(Logic_OpL_On)*V(Logic_IN1) }
+R_Logic_R1         GND_Int $N_0040  10000k  
+R_Logic_R3         GND_Int Logic_OpL_Off  10000k  
+R_Logic_R4         GND_Int Logic_Tj1  10000k  
+D_D1         Out $N_0007 DZ6V_P3 
+D_D2         GND $N_0013 DZ43V_P3 
+D_D3         $N_0011 $N_0015 DZ43V_P3 
+D_D4         GND_Int IN D_ESD_P3 
+D_D5         GND_Int DG DZ6V_P3 
+D_D6         GND_Int Vcc DZ43V_P3 
+E_E3         Vcc $N_0015 TABLE { ((V(Tj, 0)-25)*153.6u+6.37m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+E_E4         $N_0005 0 VALUE { V($N_0039, GND_Int)*45m }
+R_R1         Tj $N_0016  0.016  
+R_R2         $N_0016 $N_0017  0.14  
+R_R3         $N_0017 $N_0018  1.71  
+R_R4         $N_0018 $N_0019  0.44  
+R_R5         $N_0019 Tcase  0.286  
+C_C1         Tambiant $N_0016  180u IC=0 
+C_C2         Tambiant $N_0017  2m IC=0 
+C_C3         Tambiant $N_0018  70m IC=0 
+C_C4         Tambiant $N_0019  10m IC=0 
+C_C5         Tambiant Tcase  350m IC=0 
+X_HS2         $N_0015 $N_0034 $N_0011 mosp3 PARAMS:sur=3.15
+R_R13         Out $N_0010  3.5  
+C_C7         0 $N_0003  22n
+
+.ends
+
+*************************************************************************************
+*                  IR IPS6031 TO220 Rth=50°C/W
+*************************************************************************************
+.subckt  IPS6031 GND IN VCC DG OUT Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+
+C_C6         Tambiant $N_0001  8  
+R_R7         Tambiant $N_0001  25  
+E_E1         $N_0002 0 VALUE { V($N_0003, $N_0004)*1000 }
+R_R9         $N_0005 $N_0003  1k  
+E_ABM1         $N_0006 0 VALUE { I(V_Iout)*1.5    }
+E_E2         $N_0007 Out TABLE { V($N_0008, 0) } 
++ ( (0,0) (6,6) )
+G_ABMI1         Tambiant Tj VALUE { (V(Vcc)-V(Out))*I(V_Isense)    }
+R_R6         $N_0001 Tcase  25  
+V_Iout         $N_0009 $N_0010 0V
+R_R11         $N_0002 $N_0008  1k  
+M_M1         DG $N_0038 GND_Int GND_Int  ENH  L={2*1u} W={93*1u} AD={93*7p} PD=
++ {93*2u+13u} AS={93*7p} PS={93*2u+13u}
+C_Hyst_IN_C1         GND_Int $N_0020  10p  
+E_Hyst_IN_E1         $N_0021 GND_Int TABLE { V($N_0020, GND_Int) } 
++ ( (0,2.5) (1,2) )
+E_Hyst_IN_E2         Logic_IN1 GND_Int TABLE { V(IN, $N_0021) } 
++ ( (-10m,0) (10m,1) )
+R_Hyst_IN_R1         Logic_IN1 $N_0020  500  
+G_ABM2I1         Vcc GND_Int VALUE { (V(Logic_IN1)-V(GND_Int))*2.2mA    }
+E_U_V_E2         $N_0040 GND_Int TABLE { V(Vcc, $N_0022) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_U_V_E1         $N_0023 GND TABLE { V($N_0024, GND) } 
++ ( (0,4) (1,4.5) )
+R_U_V_R1         $N_0040 $N_0024  500  
+C_U_V_C1         GND $N_0024  10p  
+R_U_V_R2         $N_0023 $N_0022  1000  
+C_U_V_C2         GND $N_0022  10p  
+E_OverT_E2         Logic_Tj1 GND_Int TABLE { V(Tj, $N_0025) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_OverT_E1         $N_0026 0 TABLE { V($N_0027, 0) } 
++ ( (0,165) (1,158) )
+R_OverT_R1         Logic_Tj1 $N_0027  500  
+C_OverT_C1         0 $N_0027  10p  
+R_OverT_R2         $N_0026 $N_0025  1k  
+C_OverT_C2         0 $N_0025  1n  
+V_Isense         $N_0011 Out 0V
+D_Clamp_40V_D5         $N_0028 $N_0029 DZ6V_P3 
+D_Clamp_40V_D4         $N_0030 $N_0028 DZ6V_P3 
+D_Clamp_40V_D2         $N_0031 $N_0032 DZ6V_P3 
+D_Clamp_40V_D3         $N_0032 $N_0030 DZ6V_P3 
+D_Clamp_40V_D1         $N_0033 $N_0031 DZ6V_P3 
+D_Clamp_40V_D6         $N_0029 Vcc DZ6V_P3 
+D_Clamp_40V_D7         $N_0033 $N_0034 DPOLY 
+R_R8         GND Vcc  5600k  
+R_R10         $N_0006 $N_0004  100  
+R_R12         $N_0007 $N_0012  1.5k  
+R_R14         $N_0007 $N_0034  1.5k  
+R_R15         $N_0013 $N_0034  100k  
+R_R16         GND_Int IN  150K  
+M_M2         GND $N_0014 GND_Int GND_Int  ENH  L={2*1u} W={263*1u} AD={263*7p}
++  PD={263*2u+13u} AS={263*7p} PS={263*2u+13u}
+R_R17         $N_0014 Vcc  1000k  
+X_HS1         $N_0015 $N_0012 $N_0009 mosp3 PARAMS:sur=3.29m
+C_C8         0 $N_0004  1n  
+C_C9         0 $N_0008  2n  
+E_OpL_Off_E1         Logic_OpL_Off GND_Int TABLE { V(Out, GND_Int) } 
++ ( (2.99,0)(3.01,1) )
+E_S_C_E1         Logic_S_C GND_Int TABLE { V(Vcc, Out) } 
++ ( (2.99,0)(3.01,1) )
+E_OpL_On_E1         Logic_OpL_On GND_Int TABLE { V(Vcc, Out) } 
++ ( (0.0199,1) (0.020,0) )
+R_R18         GND_Int Out  800k  
+E_Logic_E5         $N_0037 GND_Int VALUE 
++ {V($N_0035,GND_Int)+V($N_0036,GND_Int)}
+E_Logic_E2         $N_0038 GND_Int TABLE { V($N_0037, GND_Int) } 
++ ( (0.5,0) (0.9,4.8) )
+E_Logic_E1         $N_0035 GND_Int VALUE { V(Logic_IN1,
++  GND_Int)*V(Logic_Tj1)+V(Logic_OpL_Off)*(1-V(Logic_IN1)) }
+R_Logic_R2         GND_Int Logic_IN1  10000k  
+R_Logic_R6         GND_Int Logic_OpL_On  10000k  
+R_Logic_R5         GND_Int Logic_S_C  10000k  
+E_Logic_E3         $N_0039 GND_Int VALUE { (V($N_0040,
++  GND_Int)*V(Logic_IN1)*(1-V(Logic_Tj1))) }
+E_Logic_E4         $N_0036 GND_Int VALUE { V(Logic_S_C,
++  GND_Int)*V(Logic_IN1)+V(Logic_OpL_On)*V(Logic_IN1) }
+R_Logic_R1         GND_Int $N_0040  10000k  
+R_Logic_R3         GND_Int Logic_OpL_Off  10000k  
+R_Logic_R4         GND_Int Logic_Tj1  10000k  
+D_D1         Out $N_0007 DZ6V_P3 
+D_D2         GND $N_0013 DZ43V_P3 
+D_D3         $N_0011 $N_0015 DZ43V_P3 
+D_D4         GND_Int IN D_ESD_P3 
+D_D5         GND_Int DG DZ6V_P3 
+D_D6         GND_Int Vcc DZ43V_P3 
+C_C4         Tambiant $N_0016  10m IC=0 
+R_R13         Out $N_0010  3.5  
+X_HS2         $N_0015 $N_0034 $N_0011 mosp3 PARAMS:sur=1.48
+E_E3         Vcc $N_0015 TABLE { ((V(Tj, 0)-25)*294.4u+8.4m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+E_E4         $N_0005 0 VALUE { V($N_0039, GND_Int)*52m }
+R_R1         Tj $N_0017  0.027  
+C_C1         Tambiant $N_0017  100u IC=0 
+R_R2         $N_0017 $N_0018  0.24  
+R_R3         $N_0018 $N_0019  2.53  
+C_C3         Tambiant $N_0019  60m IC=0 
+C_C2         Tambiant $N_0018  0.95m IC=0 
+R_R4         $N_0019 $N_0016  0.65  
+R_R5         $N_0016 Tcase  0.356  
+C_C5         Tambiant Tcase  220m IC=0 
+C_C7         0 $N_0003  22n 
+
+.ends
+
+*************************************************************************************
+*                  IR IPS6031S D2Pak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS6031S GND IN VCC DG OUT Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+
+C_C6         Tambiant $N_0001  8  
+R_R7         Tambiant $N_0001  25  
+E_E1         $N_0002 0 VALUE { V($N_0003, $N_0004)*1000 }
+R_R9         $N_0005 $N_0003  1k  
+E_ABM1         $N_0006 0 VALUE { I(V_Iout)*1.5    }
+E_E2         $N_0007 Out TABLE { V($N_0008, 0) } 
++ ( (0,0) (6,6) )
+G_ABMI1         Tambiant Tj VALUE { (V(Vcc)-V(Out))*I(V_Isense)    }
+R_R6         $N_0001 Tcase  25  
+V_Iout         $N_0009 $N_0010 0V
+R_R11         $N_0002 $N_0008  1k  
+M_M1         DG $N_0038 GND_Int GND_Int  ENH  L={2*1u} W={93*1u} AD={93*7p} PD=
++ {93*2u+13u} AS={93*7p} PS={93*2u+13u}
+C_Hyst_IN_C1         GND_Int $N_0020  10p  
+E_Hyst_IN_E1         $N_0021 GND_Int TABLE { V($N_0020, GND_Int) } 
++ ( (0,2.5) (1,2) )
+E_Hyst_IN_E2         Logic_IN1 GND_Int TABLE { V(IN, $N_0021) } 
++ ( (-10m,0) (10m,1) )
+R_Hyst_IN_R1         Logic_IN1 $N_0020  500  
+G_ABM2I1         Vcc GND_Int VALUE { (V(Logic_IN1)-V(GND_Int))*2.2mA    }
+E_U_V_E2         $N_0040 GND_Int TABLE { V(Vcc, $N_0022) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_U_V_E1         $N_0023 GND TABLE { V($N_0024, GND) } 
++ ( (0,4) (1,4.5) )
+R_U_V_R1         $N_0040 $N_0024  500  
+C_U_V_C1         GND $N_0024  10p  
+R_U_V_R2         $N_0023 $N_0022  1000  
+C_U_V_C2         GND $N_0022  10p  
+E_OverT_E2         Logic_Tj1 GND_Int TABLE { V(Tj, $N_0025) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_OverT_E1         $N_0026 0 TABLE { V($N_0027, 0) } 
++ ( (0,165) (1,158) )
+R_OverT_R1         Logic_Tj1 $N_0027  500  
+C_OverT_C1         0 $N_0027  10p  
+R_OverT_R2         $N_0026 $N_0025  1k  
+C_OverT_C2         0 $N_0025  1n  
+V_Isense         $N_0011 Out 0V
+D_Clamp_40V_D5         $N_0028 $N_0029 DZ6V_P3 
+D_Clamp_40V_D4         $N_0030 $N_0028 DZ6V_P3 
+D_Clamp_40V_D2         $N_0031 $N_0032 DZ6V_P3 
+D_Clamp_40V_D3         $N_0032 $N_0030 DZ6V_P3 
+D_Clamp_40V_D1         $N_0033 $N_0031 DZ6V_P3 
+D_Clamp_40V_D6         $N_0029 Vcc DZ6V_P3 
+D_Clamp_40V_D7         $N_0033 $N_0034 DPOLY 
+R_R8         GND Vcc  5600k  
+R_R10         $N_0006 $N_0004  100  
+R_R12         $N_0007 $N_0012  1.5k  
+R_R14         $N_0007 $N_0034  1.5k  
+R_R15         $N_0013 $N_0034  100k  
+R_R16         GND_Int IN  150K  
+M_M2         GND $N_0014 GND_Int GND_Int  ENH  L={2*1u} W={263*1u} AD={263*7p}
++  PD={263*2u+13u} AS={263*7p} PS={263*2u+13u}
+R_R17         $N_0014 Vcc  1000k  
+X_HS1         $N_0015 $N_0012 $N_0009 mosp3 PARAMS:sur=3.29m
+C_C8         0 $N_0004  1n  
+C_C9         0 $N_0008  2n  
+E_OpL_Off_E1         Logic_OpL_Off GND_Int TABLE { V(Out, GND_Int) } 
++ ( (2.99,0)(3.01,1) )
+E_S_C_E1         Logic_S_C GND_Int TABLE { V(Vcc, Out) } 
++ ( (2.99,0)(3.01,1) )
+E_OpL_On_E1         Logic_OpL_On GND_Int TABLE { V(Vcc, Out) } 
++ ( (0.0199,1) (0.020,0) )
+R_R18         GND_Int Out  800k  
+E_Logic_E5         $N_0037 GND_Int VALUE 
++ {V($N_0035,GND_Int)+V($N_0036,GND_Int)}
+E_Logic_E2         $N_0038 GND_Int TABLE { V($N_0037, GND_Int) } 
++ ( (0.5,0) (0.9,4.8) )
+E_Logic_E1         $N_0035 GND_Int VALUE { V(Logic_IN1,
++  GND_Int)*V(Logic_Tj1)+V(Logic_OpL_Off)*(1-V(Logic_IN1)) }
+R_Logic_R2         GND_Int Logic_IN1  10000k  
+R_Logic_R6         GND_Int Logic_OpL_On  10000k  
+R_Logic_R5         GND_Int Logic_S_C  10000k  
+E_Logic_E3         $N_0039 GND_Int VALUE { (V($N_0040,
++  GND_Int)*V(Logic_IN1)*(1-V(Logic_Tj1))) }
+E_Logic_E4         $N_0036 GND_Int VALUE { V(Logic_S_C,
++  GND_Int)*V(Logic_IN1)+V(Logic_OpL_On)*V(Logic_IN1) }
+R_Logic_R1         GND_Int $N_0040  10000k  
+R_Logic_R3         GND_Int Logic_OpL_Off  10000k  
+R_Logic_R4         GND_Int Logic_Tj1  10000k  
+D_D1         Out $N_0007 DZ6V_P3 
+D_D2         GND $N_0013 DZ43V_P3 
+D_D3         $N_0011 $N_0015 DZ43V_P3 
+D_D4         GND_Int IN D_ESD_P3 
+D_D5         GND_Int DG DZ6V_P3 
+D_D6         GND_Int Vcc DZ43V_P3 
+C_C4         Tambiant $N_0016  10m IC=0 
+R_R13         Out $N_0010  3.5  
+X_HS2         $N_0015 $N_0034 $N_0011 mosp3 PARAMS:sur=1.48
+E_E3         Vcc $N_0015 TABLE { ((V(Tj, 0)-25)*294.4u+8.4m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+E_E4         $N_0005 0 VALUE { V($N_0039, GND_Int)*52m }
+R_R1         Tj $N_0017  0.027  
+C_C1         Tambiant $N_0017  100u IC=0 
+R_R2         $N_0017 $N_0018  0.24  
+R_R3         $N_0018 $N_0019  2.53  
+C_C3         Tambiant $N_0019  60m IC=0 
+C_C2         Tambiant $N_0018  0.95m IC=0 
+R_R4         $N_0019 $N_0016  0.65  
+R_R5         $N_0016 Tcase  0.356  
+C_C5         Tambiant Tcase  220m IC=0 
+C_C7         0 $N_0003  22n 
+
+.ends
+
+*************************************************************************************
+*                  IR IPS6031R DPak Rth=50°C/W
+*************************************************************************************
+.subckt  IPS6031R GND IN VCC DG OUT Tj Tcase Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+
+C_C6         Tambiant $N_0001  8  
+R_R7         Tambiant $N_0001  25  
+E_E1         $N_0002 0 VALUE { V($N_0003, $N_0004)*1000 }
+R_R9         $N_0005 $N_0003  1k  
+E_ABM1         $N_0006 0 VALUE { I(V_Iout)*1.5    }
+E_E2         $N_0007 Out TABLE { V($N_0008, 0) } 
++ ( (0,0) (6,6) )
+G_ABMI1         Tambiant Tj VALUE { (V(Vcc)-V(Out))*I(V_Isense)    }
+R_R6         $N_0001 Tcase  25  
+V_Iout         $N_0009 $N_0010 0V
+R_R11         $N_0002 $N_0008  1k  
+M_M1         DG $N_0038 GND_Int GND_Int  ENH  L={2*1u} W={93*1u} AD={93*7p} PD=
++ {93*2u+13u} AS={93*7p} PS={93*2u+13u}
+C_Hyst_IN_C1         GND_Int $N_0020  10p  
+E_Hyst_IN_E1         $N_0021 GND_Int TABLE { V($N_0020, GND_Int) } 
++ ( (0,2.5) (1,2) )
+E_Hyst_IN_E2         Logic_IN1 GND_Int TABLE { V(IN, $N_0021) } 
++ ( (-10m,0) (10m,1) )
+R_Hyst_IN_R1         Logic_IN1 $N_0020  500  
+G_ABM2I1         Vcc GND_Int VALUE { (V(Logic_IN1)-V(GND_Int))*2.2mA    }
+E_U_V_E2         $N_0040 GND_Int TABLE { V(Vcc, $N_0022) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_U_V_E1         $N_0023 GND TABLE { V($N_0024, GND) } 
++ ( (0,4) (1,4.5) )
+R_U_V_R1         $N_0040 $N_0024  500  
+C_U_V_C1         GND $N_0024  10p  
+R_U_V_R2         $N_0023 $N_0022  1000  
+C_U_V_C2         GND $N_0022  10p  
+E_OverT_E2         Logic_Tj1 GND_Int TABLE { V(Tj, $N_0025) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_OverT_E1         $N_0026 0 TABLE { V($N_0027, 0) } 
++ ( (0,165) (1,158) )
+R_OverT_R1         Logic_Tj1 $N_0027  500  
+C_OverT_C1         0 $N_0027  10p  
+R_OverT_R2         $N_0026 $N_0025  1k  
+C_OverT_C2         0 $N_0025  1n  
+V_Isense         $N_0011 Out 0V
+D_Clamp_40V_D5         $N_0028 $N_0029 DZ6V_P3 
+D_Clamp_40V_D4         $N_0030 $N_0028 DZ6V_P3 
+D_Clamp_40V_D2         $N_0031 $N_0032 DZ6V_P3 
+D_Clamp_40V_D3         $N_0032 $N_0030 DZ6V_P3 
+D_Clamp_40V_D1         $N_0033 $N_0031 DZ6V_P3 
+D_Clamp_40V_D6         $N_0029 Vcc DZ6V_P3 
+D_Clamp_40V_D7         $N_0033 $N_0034 DPOLY 
+R_R8         GND Vcc  5600k  
+R_R10         $N_0006 $N_0004  100  
+R_R12         $N_0007 $N_0012  1.5k  
+R_R14         $N_0007 $N_0034  1.5k  
+R_R15         $N_0013 $N_0034  100k  
+R_R16         GND_Int IN  150K  
+M_M2         GND $N_0014 GND_Int GND_Int  ENH  L={2*1u} W={263*1u} AD={263*7p}
++  PD={263*2u+13u} AS={263*7p} PS={263*2u+13u}
+R_R17         $N_0014 Vcc  1000k  
+X_HS1         $N_0015 $N_0012 $N_0009 mosp3 PARAMS:sur=3.29m
+C_C8         0 $N_0004  1n  
+C_C9         0 $N_0008  2n  
+E_OpL_Off_E1         Logic_OpL_Off GND_Int TABLE { V(Out, GND_Int) } 
++ ( (2.99,0)(3.01,1) )
+E_S_C_E1         Logic_S_C GND_Int TABLE { V(Vcc, Out) } 
++ ( (2.99,0)(3.01,1) )
+E_OpL_On_E1         Logic_OpL_On GND_Int TABLE { V(Vcc, Out) } 
++ ( (0.0199,1) (0.020,0) )
+R_R18         GND_Int Out  800k  
+E_Logic_E5         $N_0037 GND_Int VALUE 
++ {V($N_0035,GND_Int)+V($N_0036,GND_Int)}
+E_Logic_E2         $N_0038 GND_Int TABLE { V($N_0037, GND_Int) } 
++ ( (0.5,0) (0.9,4.8) )
+E_Logic_E1         $N_0035 GND_Int VALUE { V(Logic_IN1,
++  GND_Int)*V(Logic_Tj1)+V(Logic_OpL_Off)*(1-V(Logic_IN1)) }
+R_Logic_R2         GND_Int Logic_IN1  10000k  
+R_Logic_R6         GND_Int Logic_OpL_On  10000k  
+R_Logic_R5         GND_Int Logic_S_C  10000k  
+E_Logic_E3         $N_0039 GND_Int VALUE { (V($N_0040,
++  GND_Int)*V(Logic_IN1)*(1-V(Logic_Tj1))) }
+E_Logic_E4         $N_0036 GND_Int VALUE { V(Logic_S_C,
++  GND_Int)*V(Logic_IN1)+V(Logic_OpL_On)*V(Logic_IN1) }
+R_Logic_R1         GND_Int $N_0040  10000k  
+R_Logic_R3         GND_Int Logic_OpL_Off  10000k  
+R_Logic_R4         GND_Int Logic_Tj1  10000k  
+D_D1         Out $N_0007 DZ6V_P3 
+D_D2         GND $N_0013 DZ43V_P3 
+D_D3         $N_0011 $N_0015 DZ43V_P3 
+D_D4         GND_Int IN D_ESD_P3 
+D_D5         GND_Int DG DZ6V_P3 
+D_D6         GND_Int Vcc DZ43V_P3 
+C_C4         Tambiant $N_0016  10m IC=0 
+R_R13         Out $N_0010  3.5  
+X_HS2         $N_0015 $N_0034 $N_0011 mosp3 PARAMS:sur=1.48
+E_E3         Vcc $N_0015 TABLE { ((V(Tj, 0)-25)*294.4u+8.4m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+E_E4         $N_0005 0 VALUE { V($N_0039, GND_Int)*52m }
+R_R1         Tj $N_0017  0.027  
+C_C1         Tambiant $N_0017  100u IC=0 
+R_R2         $N_0017 $N_0018  0.24  
+R_R3         $N_0018 $N_0019  2.53  
+C_C3         Tambiant $N_0019  60m IC=0 
+C_C2         Tambiant $N_0018  0.95m IC=0 
+R_R4         $N_0019 $N_0016  0.65  
+R_R5         $N_0016 Tcase  0.356  
+C_C5         Tambiant Tcase  220m IC=0 
+C_C7         0 $N_0003  22n
+ 
+.ends
+
+*************************************************************************************
+*                  IR IPS6041G SO8 Rth=100°C/W
+*************************************************************************************
+.subckt  IPS6041G GND IN DG OUT VCC1 VCC2 VCC3 VCC4 Tj Tambiant
+
+*** components model
+
+* Schematics Netlist *
+
+
+
+E_E1         $N_0001 0 VALUE { V($N_0002, $N_0003)*1000 }
+R_R9         $N_0004 $N_0002  1k  
+E_ABM1         $N_0005 0 VALUE { I(V_Iout)    }
+E_E2         $N_0006 Out TABLE { V($N_0007, 0) } 
++ ( (0,0) (6,6) )
+V_Iout         $N_0008 $N_0009 0V
+R_R11         $N_0001 $N_0007  1k  
+M_M1         DG $N_0039 GND_Int GND_Int  ENH  L={2*1u} W={93*1u} AD={93*7p} PD=
++ {93*2u+13u} AS={93*7p} PS={93*2u+13u}
+C_Hyst_IN_C1         GND_Int $N_0021  10p  
+E_Hyst_IN_E1         $N_0022 GND_Int TABLE { V($N_0021, GND_Int) } 
++ ( (0,2.5) (1,2) )
+E_Hyst_IN_E2         Logic_IN1 GND_Int TABLE { V(IN, $N_0022) } 
++ ( (-10m,0) (10m,1) )
+R_Hyst_IN_R1         Logic_IN1 $N_0021  500  
+G_ABM2I1         VCC1 GND_Int VALUE { (V(Logic_IN1)-V(GND_Int))*2.2mA    }
+E_U_V_E2         $N_0041 GND_Int TABLE { V(VCC1, $N_0023) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_U_V_E1         $N_0024 GND TABLE { V($N_0025, GND) } 
++ ( (0,4) (1,4.5) )
+R_U_V_R1         $N_0041 $N_0025  500  
+C_U_V_C1         GND $N_0025  10p  
+R_U_V_R2         $N_0024 $N_0023  1000  
+C_U_V_C2         GND $N_0023  10p  
+E_OverT_E2         Logic_Tj1 GND_Int TABLE { V(Tj, $N_0026) } 
++ ( (-100,0)(-0.01,0) (0.01,1)(100,1) )
+E_OverT_E1         $N_0027 0 TABLE { V($N_0028, 0) } 
++ ( (0,165) (1,158) )
+R_OverT_R1         Logic_Tj1 $N_0028  500  
+C_OverT_C1         0 $N_0028  10p  
+R_OverT_R2         $N_0027 $N_0026  1k  
+C_OverT_C2         0 $N_0026  1n  
+V_Isense         $N_0010 Out 0V
+D_Clamp_40V_D5         $N_0029 $N_0030 DZ6V_P3 
+D_Clamp_40V_D4         $N_0031 $N_0029 DZ6V_P3 
+D_Clamp_40V_D2         $N_0032 $N_0033 DZ6V_P3 
+D_Clamp_40V_D3         $N_0033 $N_0031 DZ6V_P3 
+D_Clamp_40V_D1         $N_0034 $N_0032 DZ6V_P3 
+D_Clamp_40V_D6         $N_0030 VCC1 DZ6V_P3 
+D_Clamp_40V_D7         $N_0034 $N_0035 DPOLY 
+R_R8         GND VCC1  5600k  
+R_R10         $N_0005 $N_0003  100  
+R_R12         $N_0006 $N_0011  1.5k  
+R_R14         $N_0006 $N_0035  1.5k  
+R_R15         $N_0012 $N_0035  100k  
+R_R16         GND_Int IN  150K  
+M_M2         GND $N_0013 GND_Int GND_Int  ENH  L={2*1u} W={263*1u} AD={263*7p}
++  PD={263*2u+13u} AS={263*7p} PS={263*2u+13u}
+R_R17         $N_0013 VCC1  1000k  
+X_HS1         $N_0014 $N_0011 $N_0008 mosp3 PARAMS:sur=3.29m
+C_C8         0 $N_0003  1n  
+C_C9         0 $N_0007  2n  
+E_OpL_Off_E1         Logic_OpL_Off GND_Int TABLE { V(Out, GND_Int) } 
++ ( (2.99,0)(3.01,1) )
+E_S_C_E1         Logic_S_C GND_Int TABLE { V(VCC1, Out) } 
++ ( (2.99,0)(3.01,1) )
+E_OpL_On_E1         Logic_OpL_On GND_Int TABLE { V(VCC1, Out) } 
++ ( (0.0199,1) (0.020,0) )
+R_R18         GND_Int Out  800k  
+E_Logic_E5         $N_0038 GND_Int VALUE 
++ {V($N_0036,GND_Int)+V($N_0037,GND_Int)}
+E_Logic_E2         $N_0039 GND_Int TABLE { V($N_0038, GND_Int) } 
++ ( (0.5,0) (0.9,4.8) )
+E_Logic_E1         $N_0036 GND_Int VALUE { V(Logic_IN1,
++  GND_Int)*V(Logic_Tj1)+V(Logic_OpL_Off)*(1-V(Logic_IN1)) }
+R_Logic_R2         GND_Int Logic_IN1  10000k  
+R_Logic_R6         GND_Int Logic_OpL_On  10000k  
+R_Logic_R5         GND_Int Logic_S_C  10000k  
+E_Logic_E3         $N_0040 GND_Int VALUE { (V($N_0041,
++  GND_Int)*V(Logic_IN1)*(1-V(Logic_Tj1))) }
+E_Logic_E4         $N_0037 GND_Int VALUE { V(Logic_S_C,
++  GND_Int)*V(Logic_IN1)+V(Logic_OpL_On)*V(Logic_IN1) }
+R_Logic_R1         GND_Int $N_0041  10000k  
+R_Logic_R3         GND_Int Logic_OpL_Off  10000k  
+R_Logic_R4         GND_Int Logic_Tj1  10000k  
+E_E3         VCC1 $N_0014 TABLE { ((V(Tj, 0)-25)*672u+19.4m)*I(V_Isense) } 
++ ( (-15,-15) (15,15) )
+R_R13         Out $N_0009  5.5  
+X_HS2         $N_0014 $N_0035 $N_0010 mosp3 PARAMS:sur=0.652
+R_R1         Tj $N_0015  0.056  
+R_R2         $N_0015 $N_0016  0.58  
+R_R3         $N_0016 $N_0017  4  
+R_R4         $N_0017 $N_0018  0.8  
+R_R5         $N_0018 $N_0019  0.548  
+C_C5         Tambiant $N_0019  140m IC=0 
+C_C4         Tambiant $N_0018  1.5m IC=0 
+C_C3         Tambiant $N_0017  50m IC=0 
+C_C2         Tambiant $N_0016  0.4m IC=0 
+C_C1         Tambiant $N_0015  40u IC=0 
+R_R6         $N_0020 $N_0019  47  
+R_R7         Tambiant $N_0020  47  
+C_C6         Tambiant $N_0020  1p  
+D_D1         Out $N_0006 DZ6V_P3 
+D_D2         GND $N_0012 DZ43V_P3 
+D_D3         $N_0010 $N_0014 DZ43V_P3 
+D_D4         GND_Int IN D_ESD_P3 
+D_D5         GND_Int DG DZ6V_P3 
+D_D6         GND_Int VCC1 DZ43V_P3 
+G_ABMI1         Tambiant Tj VALUE { (V(VCC1)-V(Out))*I(V_Isense)    }
+E_E4         $N_0004 0 VALUE { V($N_0040, GND_Int)*33m }
+C_C7         0 $N_0002  22n
+
+.ends
+
+*************************************************************************************
+*                  IR P3 40V SUBCIRCUITS 
+*************************************************************************************
+.subckt  MosP3 DR GA SO PARAMS:sur=1
+
+*** components model
+
+
+.MODEL  VMOS5           NMOS            LEVEL=2
++       (VTO=1.6 LOT=0.16)
++       VTO=1.6    
++       GAMMA=3        PHI=0.7         PB=0.8
++       CGSO=0.15P      CGDO=0        CGBO=0         RSH=270
++       CJ=3E-4        MJ=0.42         CJSW=750P      MJSW=0.4
++       JS=2.5E-6      TOX=1000E-10     NSUB=1E17      NFS=2E11
++       XJ=1U          LD=0            UO=450         UCRIT=8E4
++       UEXP=0.15      VMAX=5E4        NEFF=3         XQC=0.6         
+
+*VMOS1 JFET PART OF THE VERTICAL POWER MOS *SIV2.mod
+.MODEL  VMOS1          NMOS            LEVEL=1
++       VTO=-1.82      LAMBDA=0.02
++       GAMMA=0.71     PHI=0.74        PB=0.8
++       CGSO=0p      CGDO=250P       CGBO=0
++       JS=2.5E-6      TOX=530E-10     NSUB=2.2E16     NFS=2E11
++       XJ=1U          LD=0            KP=41.8E-6      UCRIT=8E4
++       UEXP=0         VMAX=5E4        NEFF=3          XQC=0.5001
+
+* Schematics Netlist *
+ 
+M_HS1_1         N2 GA N1 SO  VMOS1  L={1*1.3u}  W={{sur*4544}*60u} AD=0 AS=0 PD=
++ {{4544}*120u} PS={{4544}*120u}
+M_HS1_2         N1 GA SO SO  VMOS5 L={1*2u} W={{sur*32000}*55u}  AD={{sur*32000}*170p}
++  PD={{sur*32000}*55u} NRD=0 NRS=0
+R_HS1_R1         N2 DR  {16m/sur}  TC1=0.01
+R		N2  N1  {1k/sur}
+.ends MosP3
+
+.MODEL  DZ2V_P3 D (IS=1E-16 BV=2 RS=140 TBV1=1.1E-4)
+
+.MODEL  DZ6V_P3 D (IS=1E-16 BV=5.6 RS=140 TBV1=1.1E-4)
+
+.MODEL  D_ESD_P3 D (IS=1E-16 BV=6.2 RS=17 TBV1=1.1E-4)
+
+.MODEL  DPOLY    D (is=1e-11 n=2 XTI=0.02 rs=200 bv=6.6)
+
+.MODEL  DZ43V_P3 D (IS=1E-16 BV=43 RS=0.001 TBV1=1.1E-4)
+
+*ENH: LATERAL LOW VOLTAGE ENHANCEMENT NMOS TRANSISTOR 	*
+
+.MODEL  ENH            NMOS             LEVEL=1
++       (VTO=0.4       LOT=0.025        DEV=0.002) 
++       GAMMA=0.85      PHI=0.8          PB=0.8      LAMBDA=0.01
++       CGSO=190P      CGDO=190P	CGBO=380P     
++       CJ=6.5E-4      MJ=0.45          CJSW=100P     MJSW=0.4
++       JS=2.5E-6      TOX=220E-10      NSUB=1.5E17   NFS=2E11
++       XJ=0.1U        LD=0.16U         UO=220        UCRIT=8E4
++       UEXP=0         VMAX=5E4         NEFF=3.0      XQC=1
+
+*PCH: LATERAL PMOS TRANSISTOR WITH PBODY SOURCE AND DRAIN *
+
+.MODEL  PCH            PMOS             LEVEL=1       TPG=-1
++       VTO=-1.45       PHI=0.64         PB=0.75         
++       GAMMA=0.78     LAMBDA=0.00625
++       CGSO=2500P     CGDO=2500P       CGBO=280P     RSH=00
++       CJ=3E-4        MJ=0.42          CJSW=750P     MJSW=0.4
++       JS=2.5E-6      TOX=300E-10      NSUB=9.2E15   NFS=2E11
++       XJ=2.7U        LD=2.2U          UO=125        UCRIT=7E4
++       UEXP=0         VMAX=6E4         NEFF=5.0      XQC=1
