@@ -1,4 +1,6 @@
 CC=msp430-gcc
+
+
 DEBUG=
 
 # c89   - "ANSI" C
@@ -14,23 +16,29 @@ CTUNING = -Wall -O$(COPT) -fpack-struct -fshort-enums -funsigned-char -funsigned
 
 CDEFS = -mmcu=$(MCU)
 CFLAGS = -Wa,-adhlns=$(<:.c=.lst) $(CDEBUG) $(CDEFS) $(CINCS) $(CTUNING) $(CWARN) $(CSTANDARD) $(CEXTRA)
-LDFLAGS = -Wl,--gc-sections $(LDEXTRA)
+LDFLAGS = -Wl,--gc-sections,-Map=$(TARGET).map $(LDEXTRA)
+ASFLAGS = $(CDEFS) -x assembler-with-cpp -Wa,-adhlns=$(<:.S=.lst),-g$(DEBUG)
 
 # Define all object files.
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.c=.o) $(ASRC:.S=.o)
 
 # Define all listing files.
-LST = $(SRC:.c=.lst)
+LST = $(SRC:.c=.lst) $(ASRC:.S=.lst)
 
 all: $(TARGET).elf
 
-$(TARGET).elf: $(SOURCES)
+$(TARGET).elf: $(OBJ)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) -o $@ $<
 
 
 # Compile: create object files from C source files.
 .c.o:
-	$(CC) -c $(CFLAGS) $< -o $@ 
+	$(CC) -c $(CFLAGS) $< -o $@
+
+# Assemble: create object files from assembler source files.
+.S.o:
+	$(CC) -c $(ASFLAGS) $< -o $@
+
 
 upload: flash
 flash: $(TARGET).elf
