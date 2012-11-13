@@ -1,0 +1,36 @@
+*
+*Zetex ZXGD3003E6 Spice Model v2.0 Last Revised   17/09/08
+*
+.SUBCKT ZXGD3003E6 1 2 3 4 5 6
+*pins             Vcc, In1, Gnd, Sink, In2, Source
+Q1 1 2 6 ZXGD3003N
+Q2 3 5 4 ZXGD3003P
+*
+.MODEL ZXGD3003N  NPN IS=2.5E-13 NF=1 BF=600 IKF=1 VAF=51 ISE=2E-13 
++NE=1.4 NR=1 BR=150 IKR=.5 VAR=25 ISC=1e-13 NC=1.47 RB=0.5
++RE=0.055 RC=0.055 CJC=23E-12 MJC=0.33 VJC=0.75 CJE=98E-12 TF=0.8E-9 
++TR=30e-9
+*
+.MODEL ZXGD3003P PNP IS=2e-13 BF=550 XTB=1.4 NF=1 VAF=21 IKF=0.25 
++ ISE=1e-13 NE=1.38 BR=55 NR=1 VAR=9.9 IKR=0.25 ISC=1e-13 NC=1.18
++ RE=0.06 RB=0.7 RC=0.06 CJE=95.9e-12 VJE=0.897 MJE=0.468 CJC=43.4e-12
++ VJC=1.816 MJC=0.85 TF=495e-12 TR=25e-9 
+*
+.ENDS ZXGD3003E6
+*
+*$
+*
+*                (c)  2008 Diodes Incorporated
+*
+*   The copyright in these models  and  the designs embodied belong
+*   to Diodes Incorporated (" Diodes ").  They  are  supplied
+*   free of charge by Diodes for the purpose of research and design
+*   and may be used or copied intact  (including this notice)  for
+*   that purpose only.  All other rights are reserved. The models
+*   are believed accurate but  no condition  or warranty  as to their
+*   merchantability or fitness for purpose is given and no liability
+*   in respect of any use is accepted by Diodes Incorporated, its distributors
+*   or agents.
+*
+*   Diodes Incorporated, 1566 N. Dallas Parkway, Suite 850, Dallas, TX 75248, USA
+
