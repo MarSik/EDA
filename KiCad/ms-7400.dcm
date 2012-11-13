@@ -1,4 +1,9 @@
-EESchema-DOCLIB  Version 2.0  Date: Sun 12 Aug 2012 04:29:32 PM CEST
+EESchema-DOCLIB  Version 2.0  Date: so 27 říj 11:22:47 2012
+#
+$CMP 7400
+D Quad nand2
+K TTL nand2
+$ENDCMP
 #
 $CMP 744053
 D HIGH-SPEED CMOS LOGIC ANALOG MULTIPLEXERS/DEMULTIPLEXERS
@@ -8,6 +13,16 @@ $CMP 74ACT74
 D Dual D FlipFlop, Set & Reset
 K TTL DFF
 F 74xx/74hc_hct74.pdf
+$ENDCMP
+#
+$CMP 74AHC00
+D Quad nand2
+K TTL nand2
+$ENDCMP
+#
+$CMP 74HC00
+D Quad nand2
+K HCMOS nand2
 $ENDCMP
 #
 $CMP 74HC04
@@ -21,6 +36,11 @@ K TTL DFF
 F 74xx/74hc_hct74.pdf
 $ENDCMP
 #
+$CMP 74HCT00
+D Quad nand2
+K HCTMOS nand2
+$ENDCMP
+#
 $CMP 74HCT04
 D Hex Inverseur
 K HCTMOS not inv
@@ -29,6 +49,11 @@ $ENDCMP
 $CMP 74LS14
 D Hex inverseur schmitt trigger
 K TTL not inv
+$ENDCMP
+#
+$CMP 74LS37
+D Quad Buffer nand2
+K TTL nand2 buffer
 $ENDCMP
 #
 #End Doc Library

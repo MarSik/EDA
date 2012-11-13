@@ -1,47 +1,15 @@
-EESchema-DOCLIB  Version 2.0  Date: Sun 12 Aug 2012 04:29:11 PM CEST
+EESchema-DOCLIB  Version 2.0  Date: Sun 04 Nov 2012 10:10:46 PM CET
 #
 $CMP LT6231CS8
 D Ultra low noise (1.1nV/sqrtHz) operational amplifier
 $ENDCMP
 #
 $CMP MAX13330
-D The MAX13330/MAX13331 stereo headphone amplifiers
-are designed for automotive applications requiring out-
-put short-circuit and ESD protection to battery/ground
-with diagnostics. These devices use Maxim’s unique
-DirectDrive® architecture to produce a ground-refer-
-enced output from a single supply, eliminating the need
-for large DC-blocking capacitors, saving board space
-and component height. The gain of the amplifier is set
-internally (-1.5V/V) on the MAX13330 or adjusted exter-
-nally with resistors on the MAX13331.
-The MAX13330/MAX13331 deliver 120mW per channel
-into a 16Ω load or 135mW into a 32Ω load and have a
-low 0.01% THD+N. Low output impedance and the effi-
-cient integrated charge pump allows the device to drive
-loads as low as 8Ω, enabling the use of small loud-
-speakers. An 80dB at 217Hz PSRR allows these
-devices to operate from noisy digital supplies without
-an additional linear regulator. These devices include
-±15kV Human Body Model ESD protection and short-
-circuit protection up to +45V at the headphone outputs.
-Comprehensive click-and-pop circuitry suppresses
-audible clicks and pops on startup and shutdown. A
-low-power shutdown mode reduces the supply current
-to 3μA (typ).
-
+D rectDrive® architecture to produce a ground-refer-
 $ENDCMP
 #
 $CMP MAX5541
 D The MAX5541 serial-input, voltage-output, 16-bit monoto- 
-nic digital-to-analog converter (DAC) operates from a 
-single +5V supply. The DAC output is unbuffered, result- 
-ing in a low 0.3mA supply current and low 1LSB offset 
-error. The DAC output range is 0V to VREF. The DAC 
-latch accepts a 16-bit serial word. A power-on reset 
-(POR) circuit clears the DAC output to 0V (unipolar 
-mode) when power is initially applied. 
-
 $ENDCMP
 #
 #End Doc Library

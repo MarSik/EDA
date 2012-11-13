@@ -1,7 +1,15 @@
-EESchema-DOCLIB  Version 2.0  Date: Sun 12 Aug 2012 05:41:18 PM CEST
+EESchema-DOCLIB  Version 2.0  Date: 11/6/2012 5:28:52 PM
 #
 $CMP MCP2210
 D USB-to-SPI Protocol Converter with GPIO (Master Mode)
+$ENDCMP
+#
+$CMP MCP23008
+D 8bit I2C port expander
+$ENDCMP
+#
+$CMP MCP23017
+D 16bit I2C port expander
 $ENDCMP
 #
 $CMP MCP7941X
