@@ -8,7 +8,7 @@ LDSCRIPT = $(SUPPORT)/stm32_flash.ld
 CFLAGS += -I$(SUPPORT) -I$(SUPPORT)/inc -I$(SUPPORT)/inc/core -I$(SUPPORT)/inc/peripherals
 LDFLAGS += -L$(SUPPORT) -lstm32f4
 
-SRC += $(SUPPORT)/stm32f4xx_it.c $(SUPPORT)/system_stm32f4xx.c
+SRC += $(SUPPORT)/system_stm32f4xx.c
 ASRC +=$(SUPPORT)/startup_stm32f4xx.s
 
 upload: flash
