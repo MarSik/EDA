@@ -1,4 +1,8 @@
-EESchema-DOCLIB  Version 2.0  Date: po  5 lis 19:45:04 2012
+EESchema-DOCLIB  Version 2.0  Date: 3/16/2013 6:52:04 PM
+#
+$CMP BX56-12
+D 3x 7 segment display, common cathodes/anodes
+$ENDCMP
 #
 $CMP WFVQE13E
 D dual 7 segment display, common cathodes

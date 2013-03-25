@@ -1,0 +1,17 @@
+# About
+the file Pentawatt_RevB_30Apr2011.mod
+
+
+Contains the KiCAD module/footprint of some
+Pentawatt / TO-220-5 housings.
+Maybe they can used for generic types also.
+ 
+
+Pentawatt_Neutral_Straight_Vertical_TO220-5-T05A
+Pentawatt_Neutral_Staggered_Verical_TO220-5-T05D
+Pentawatt_Neutral_Staggered-Typ1_Horizontal_TO220-5-TA05B
+Pentawatt_Neutral_Staggered-Typ2_Horizontal_TO220-5-T05E
+
+Author: Bernd Wiebus / Uedem / Germany / 30 Apr 2011
+GNU-GPL, NO WARRANTY!
+

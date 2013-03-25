@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: so 27 říj 11:22:47 2012
+EESchema-DOCLIB  Version 2.0  Date: 12/18/2012 9:31:52 PM
 #
 $CMP 7400
 D Quad nand2
@@ -30,6 +30,12 @@ D Hex Inverseur
 K HCMOS not inv
 $ENDCMP
 #
+$CMP 74HC595
+D 8 bits serial in // out Shift Register 3 State Out
+K HCMOS SR 3State
+F 74xx/74HC595.pdf
+$ENDCMP
+#
 $CMP 74HC74
 D Dual D FlipFlop, Set & Reset
 K TTL DFF
@@ -54,6 +60,16 @@ $ENDCMP
 $CMP 74LS37
 D Quad Buffer nand2
 K TTL nand2 buffer
+$ENDCMP
+#
+$CMP 74LS595
+D 8 bits serial in // out Shift Register 3 State Out
+K TTL SR 3State
+$ENDCMP
+#
+$CMP 74LS596
+D 8 bits serial in // out Shift Register Open Collect.
+K HCMOS SR OpenCol
 $ENDCMP
 #
 #End Doc Library
