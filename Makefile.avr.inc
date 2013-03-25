@@ -10,6 +10,7 @@ DEBUG = stabs
 # Place -D or -U options here
 CDEFS += -DF_CPU=$(F_CPU)
 CXXDEFS += -DF_CPU=$(F_CPU)
+CPUFLAGS += -mmcu=$(MCU)
 
 ASFLAGS += -I.
 CFLAGS += -I.
@@ -34,13 +35,13 @@ build: elf eep size hex
 elf: $(TARGET).elf
 hex: $(TARGET).hex
 eep: $(TARGET).eep
-lss: $(TARGET).lss 
+lss: $(TARGET).lss
 sym: $(TARGET).sym
 
 # Program the device.
 upload: $(TARGET).hex $(TARGET).eep
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE_EEPROM)
-  
+
 flash: $(TARGET).hex
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH)
 
@@ -55,7 +56,7 @@ COFFCONVERT=$(OBJCOPY) --debugging \
 --change-section-address .data-0x800000 \
 --change-section-address .bss-0x800000 \
 --change-section-address .noinit-0x800000 \
---change-section-address .eeprom-0x810000 
+--change-section-address .eeprom-0x810000
 
 
 coff: $(TARGET).elf

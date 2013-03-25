@@ -6,3 +6,10 @@
 *.bak
 *.bck
 *.pyc
+*.PBP
+*.lst
+*.o
+*.a
+*.elf
+*.prx
+*.SFO

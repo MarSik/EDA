@@ -5,6 +5,8 @@ LDSCRIPT = $(SUPPORT)/stm32_flash.ld
 
 -include ~/Dropbox/EDA/Makefile.common.inc
 
+CPUFLAGS += -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16
+
 CFLAGS += -I$(SUPPORT) -I$(SUPPORT)/inc -I$(SUPPORT)/inc/core -I$(SUPPORT)/inc/peripherals
 LDFLAGS += -L$(SUPPORT) -lstm32f4
 

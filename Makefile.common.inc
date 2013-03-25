@@ -1,4 +1,5 @@
 CC = $(PREFIX)-gcc
+LD = $(PREFIX)-ld
 CXX = $(PREFIX)-g++
 GDB = $(PREFIX)-gdb
 OBJCOPY = $(PREFIX)-objcopy
@@ -22,18 +23,18 @@ CWARN = -Wno-main -Wall -Wstrict-prototypes
 CTUNING = -Wall -O$(COPT) -fpack-struct -fshort-enums -funsigned-char -funsigned-bitfields \
 -fno-exceptions -ffunction-sections -fdata-sections
 
-CDEFS = -mmcu=$(MCU)
-CXXDEFS = -mmcu=$(MCU)
+CDEFS = $(CPUFLAGS)
+CXXDEFS = $(CPUFLAGS)
 CFLAGS = -Wa,-adhlns=$(<:.c=.lst) $(CDEBUG) $(CDEFS) $(CINCS) $(CTUNING) $(CWARN) $(CSTANDARD) $(CEXTRA)
 CXXFLAGS = -Wa,-adhlns=$(<:.cpp=.lst) $(CDEBUG) $(CXXDEFS) $(CINCS) $(CTUNING) $(CXXWARN) $(CXXEXTRA)
 
 ifeq ($(LDSCRIPT),)
 LDSCRIPTFLAGS=
 else
-LDSCRIPTFLAGS=-T $(LDSCRIPT)
+LDSCRIPTFLAGS=--script=$(LDSCRIPT)
 endif
 
-LDFLAGS = $(LDSCRIPTFLAGS) -Wl,--gc-sections,-Map=$(TARGET).map $(LDEXTRA)
+LDFLAGS = $(LDSCRIPTFLAGS) --gc-sections --map=$(TARGET).map $(LDEXTRA)
 ASFLAGS = $(CDEFS) -x assembler-with-cpp -Wa,-adhlns=$(<:.S=.lst),-g$(DEBUG)
 
 # Define all object files.
@@ -46,8 +47,7 @@ MAPS = $(TARGET).map
 all: $(TARGET).elf
 
 $(TARGET).elf: $(OBJ)
-	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) -o $@ $<
-
+	$(LD) $(LDFLAGS) $(LIBS) -o $@ $<
 
 # Compile: create object files from C source files.
 .c.o:
