@@ -46,6 +46,11 @@ def compile(dirname):
         "dcm": "$CMP "
     }
 
+    ends = {
+        "lib": "ENDDEF",
+        "dcm": "$ENDCMP"
+    }
+
     found = set()
 
     for fname in os.listdir(dirname):
@@ -72,8 +77,11 @@ def compile(dirname):
                             break
 
 
-            # Copy the file contents
-            dest.write(src.read())
+            # Copy the file contents except the tail
+            for l in src:
+                dest.write(l)
+                if l.startswith(ends[ext]):
+                    break
 
 
 if __name__ == "__main__":
