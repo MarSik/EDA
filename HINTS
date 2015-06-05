@@ -1,0 +1,5 @@
+Rename pcb files for SeedStudio Fusion:
+prename -v 's/(.*)-([^.]+).([a-z]+)/$1.$3/' *.g[bt][lsor] *.pho *.gml *.gko
+prename -v 's/(.*).txt/$1.txt/' *.drl
+prename -v 's/(.*).gbr/$1.gml/' *.gbr
+
