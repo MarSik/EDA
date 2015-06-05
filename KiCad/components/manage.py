@@ -78,10 +78,17 @@ def compile(dirname):
 
 
             # Copy the file contents except the tail
+            # The file can possibly contain multiple elements..
+            state = 1
             for l in src:
-                dest.write(l)
-                if l.startswith(ends[ext]):
-                    break
+                if state == 1:
+                    dest.write(l)
+
+                if state == 1 and l.startswith(ends[ext]):
+                    state = 0
+                elif state == 0 and l.startswith(starts[ext]):
+                    state = 1
+                    dest.write(l)
 
 
 if __name__ == "__main__":
