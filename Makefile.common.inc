@@ -47,7 +47,7 @@ MAPS = $(TARGET).map
 all: $(TARGET).elf
 
 $(TARGET).elf: $(OBJ)
-	$(LD) $(LDFLAGS) $(LIBS) -o $@ $<
+	$(LD) $(LDFLAGS) $(LIBS) -o $@ $(OBJ)
 
 # Compile: create object files from C source files.
 .c.o:
@@ -74,4 +74,3 @@ size: $(TARGET).elf
 
 .PHONY: all upload flash clean size
 .PRECIOUS: .elf
-

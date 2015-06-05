@@ -2,6 +2,9 @@ PREFIX = $(AVRDUDE_DIR)/avr
 
 -include ~/Dropbox/EDA/Makefile.common.inc
 
+# Output format
+FORMAT = ihex
+
 # Debugging format
 # Native formats for AVR-GCC's -g are stabs [default], or dwarf-2.
 # AVR (extended) COFF requires stabs, plus an avr-objcopy run.
@@ -91,4 +94,3 @@ CLEAN = $(TARGET).hex $(TARGET).eep $(TARGET).cof $(TARGET).elf \
 
 .PHONY:	all upload size fuses eeprom build elf hex eep lss sym program coff extcoff clean
 .PRECIOUS: .elf .hex .eep
-
