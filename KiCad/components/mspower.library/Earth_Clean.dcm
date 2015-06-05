@@ -1,0 +1,5 @@
+EESchema-DOCLIB  Version 2.0
+$CMP Earth_Clean
+D Clean Earth
+K POWER, PWR, GND, GROUND, CLEAN, SIGNAL
+$ENDCMP

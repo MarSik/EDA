@@ -1,0 +1,5 @@
+EESchema-DOCLIB  Version 2.0
+$CMP Earth_Protective
+D Protective Earth
+K POWER, PWR, EARTH, PROTECTIVE, GND, GROUND, PE
+$ENDCMP

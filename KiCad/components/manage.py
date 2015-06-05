@@ -77,12 +77,20 @@ def compile(dirname):
 
 
 if __name__ == "__main__":
-    cmd = sys.argv[1]
-    lib = sys.argv[2]
+    if len(sys.argv) == 1:
+        cmd = None
+        lib = "."
+    else:
+        cmd = sys.argv[1]
+        lib = sys.argv[2]
 
     if cmd == "explode":
         explode(lib, suffix=".lib", start="DEF ", stop="ENDDEF")
         explode(lib, suffix=".dcm", start="$CMP ", stop="$ENDCMP")
     elif cmd == "compile":
         compile(lib)
+    else: # compile all
+        for f in os.listdir(lib):
+            if f.endswith(".library"):
+                compile(f)
 

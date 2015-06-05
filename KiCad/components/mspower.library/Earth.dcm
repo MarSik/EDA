@@ -1,0 +1,5 @@
+EESchema-DOCLIB  Version 2.0
+$CMP Earth
+D Earth Ground
+K POWER, PWR, GND, GROUND
+$ENDCMP

@@ -1,0 +1,16 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+DEF ~Earth_Clean #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 250 0 50 H I C CNN
+F1 "Earth_Clean" 300 -150 50 H I C CNN
+F2 "" 0 -50 60 H V C CNN
+F3 "" 0 -50 60 H V C CNN
+DRAW
+A 0 -150 100 1 1799 0 1 0 N 100 -150 -100 -150
+P 2 0 1 0  -25 -125  25 -125 N
+P 2 0 1 0  -5 -150  5 -150 N
+P 2 0 1 0  0 -100  0 0 N
+P 2 0 1 0  50 -100  -50 -100 N
+X Earth_Clean 1 0 0 0 D 50 50 1 1 W N
+ENDDRAW
+ENDDEF
