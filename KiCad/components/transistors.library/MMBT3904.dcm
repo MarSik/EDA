@@ -1,0 +1,6 @@
+EESchema-DOCLIB  Version 2.0
+$CMP MMBT3904
+D MMBT3904, 40V Vce, 0.2A Ic, NPN, Small Signal Transistor, SOT-23
+K MMBT3904 NPN Transistor
+F http://www.nxp.com/documents/data_sheet/MMBT3904.pdf
+$ENDCMP

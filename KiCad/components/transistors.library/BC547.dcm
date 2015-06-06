@@ -1,0 +1,26 @@
+EESchema-DOCLIB  Version 2.0
+$CMP BC546
+D BC546, 65V Vce, 0.1A Ic, NPN, Small Signal Transistor, TO-92
+K BC546 NPN Transistor
+F http://www.fairchildsemi.com/ds/BC/BC547.pdf
+$ENDCMP
+$CMP BC547
+D BC547, 45V Vce, 0.1A Ic, NPN, Small Signal Transistor, TO-92
+K BC547 NPN Transistor
+F http://www.fairchildsemi.com/ds/BC/BC547.pdf
+$ENDCMP
+$CMP BC548
+D BC548, 30V Vce, 0.1A Ic, NPN, Small Signal Transistor, TO-92
+K BC548 NPN Transistor
+F http://www.fairchildsemi.com/ds/BC/BC547.pdf
+$ENDCMP
+$CMP BC549
+D BC549, 30V Vce, 0.1A Ic, NPN, Small Signal Transistor, TO-92
+K BC549 NPN Transistor
+F http://www.fairchildsemi.com/ds/BC/BC547.pdf
+$ENDCMP
+$CMP BC550
+D BC550, 45V Vce, 0.1A Ic, NPN, Small Signal Transistor, TO-92
+K BC550 NPN Transistor
+F http://www.fairchildsemi.com/ds/BC/BC547.pdf
+$ENDCMP

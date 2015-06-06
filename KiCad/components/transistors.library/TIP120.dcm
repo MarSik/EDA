@@ -1,0 +1,16 @@
+EESchema-DOCLIB  Version 2.0
+$CMP TIP120
+D TIP120, 5A Ic, 60V Vce, Silicon Darlington Power Transistor NPN, TO-220
+K Darlington Power Transistor NPN
+F http://www.fairchildsemi.com/ds/TI/TIP120.pdf
+$ENDCMP
+$CMP TIP121
+D TIP121, 5A Ic, 80V Vce, Silicon Darlington Power Transistor NPN, TO-220
+K Darlington Power Transistor NPN
+F http://www.fairchildsemi.com/ds/TI/TIP120.pdf
+$ENDCMP
+$CMP TIP122
+D TIP122, 5A Ic, 100V Vce, Silicon Darlington Power Transistor NPN, TO-220
+K Darlington Power Transistor NPN
+F http://www.fairchildsemi.com/ds/TI/TIP120.pdf
+$ENDCMP
