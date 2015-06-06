@@ -2,12 +2,15 @@
 import sys
 import os
 
-def explode(name, suffix=".lib", start="DEF ", stop="ENDDEF"):
+def explode(name, suffix=".lib", start="DEF ", stop="ENDDEF", alias="ALIAS ", filenamemap = {}):
     dirname = name + ".library"
     try:
         os.makedirs(dirname)
     except OSError:
         pass
+
+    aliasmap = {}
+    known = set()
 
     with open(name+suffix, "r") as fin:
         header = fin.readline()
@@ -20,20 +23,35 @@ def explode(name, suffix=".lib", start="DEF ", stop="ENDDEF"):
                 name = parts[1]
                 if name[0] == "~":
                     name = name[1:]
-                fout = open(os.path.join(dirname, name + suffix), "w")
-                fout.write(header)
-                if encoding:
-                    fout.write(encoding)
+                aliasmap[name] = name
+                if name in filenamemap:
+                    fname = filenamemap[name]
+                else:
+                    fname = name
+                fout = open(os.path.join(dirname, fname + suffix),
+                            "a" if fname in known else "w")
+                if not fname in known:
+                    fout.write(header)
+                    if encoding:
+                        fout.write(encoding)
+                known.add(fname)
                 fout.write(line)
                 state = 1
             elif state == 1 and line.startswith(stop):
                 fout.write(line)
                 fout.close()
                 state = 0
+            elif state == 1 and alias is not None and line.startswith(alias):
+                names = line.split()
+                for n in names[1:]:
+                    aliasmap[n] = name
+                fout.write(line)
             elif state == 1:
                 fout.write(line)
             elif state == 0 and line.startswith("#encoding"):
                 encoding = line
+
+    return aliasmap
 
 def compile(dirname):
     libname, ext = dirname.split(".")
@@ -100,8 +118,10 @@ if __name__ == "__main__":
         lib = sys.argv[2]
 
     if cmd == "explode":
-        explode(lib, suffix=".lib", start="DEF ", stop="ENDDEF")
-        explode(lib, suffix=".dcm", start="$CMP ", stop="$ENDCMP")
+        aliasmap=explode(lib, suffix=".lib", start="DEF ", stop="ENDDEF",
+                         alias="ALIAS ")
+        explode(lib, suffix=".dcm", start="$CMP ", stop="$ENDCMP",
+                alias=None, filenamemap=aliasmap)
     elif cmd == "compile":
         compile(lib)
     else: # compile all
