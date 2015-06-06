@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MCP6561
+D 1.8V Low Power Push-Pull Output Comparator (single)
+K comparator, push pull
+$ENDCMP
+#
+#End Doc Library

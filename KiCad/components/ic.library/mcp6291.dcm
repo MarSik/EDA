@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MCP6291
+D Microchip 10 MHz Rail-to-Rail Op Amp (single)
+K comparator, push pull
+$ENDCMP
+#
+#End Doc Library

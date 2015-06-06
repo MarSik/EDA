@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP opamp
+D Generic OPAMP part, use as template for drawing specific devices
+K opamp
+$ENDCMP
+#
+#End Doc Library

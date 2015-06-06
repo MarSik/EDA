@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MCP4706
+D Microchip 8-/10-/12-Bit Voltage Output Digital-to-Analog Converter with EEPROM and I2C Interface
+K comparator, push pull
+$ENDCMP
+#
+#End Doc Library
