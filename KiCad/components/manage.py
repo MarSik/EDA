@@ -71,7 +71,7 @@ def compile(dirname):
 
     found = set()
 
-    for fname in os.listdir(dirname):
+    for fname in sorted(os.listdir(dirname)):
         if fname == "." or fname == "..":
             continue
 
@@ -92,6 +92,8 @@ def compile(dirname):
                         l = src.readline()
                         if l.startswith(starts[ext]):
                             dest.write(l)
+                            break
+                        elif l == "":
                             break
 
 
