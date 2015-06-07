@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LTC2633
+D Dual 12-/10-/8-Bit I2C VOUT DACs with 10ppm/°C Reference
+K dac
+$ENDCMP
+#
+#End Doc Library

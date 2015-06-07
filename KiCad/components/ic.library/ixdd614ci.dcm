@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IXDD614CI
+D IXYS 14-Ampere Low-Side Ultrafast MOSFET Driver
+K driver, fast
+$ENDCMP
+#
+#End Doc Library

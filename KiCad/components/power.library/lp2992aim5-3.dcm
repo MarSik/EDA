@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LP2992AIM5-3.3CT-ND
+D Low dropout voltage regulator
+K ldo
+$ENDCMP
+#
+#End Doc Library
