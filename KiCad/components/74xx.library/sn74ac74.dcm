@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SN74AC74
+D Dual D FlipFlop, Set & Reset
+K TTL, DFF
+F 74xx/74hc_hct74.pdf
+$ENDCMP
+#
+#End Doc Library
