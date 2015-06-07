@@ -1,7 +1,17 @@
 EESchema-DOCLIB  Version 2.0
 #
 $CMP MCP4706
-D Microchip 8-/10-/12-Bit Voltage Output Digital-to-Analog Converter with EEPROM and I2C Interface
+D Microchip 8-Bit Voltage Output Digital-to-Analog Converter with EEPROM and I2C Interface
+K comparator, push pull
+$ENDCMP
+#
+$CMP MCP4716
+D Microchip 10-Bit Voltage Output Digital-to-Analog Converter with EEPROM and I2C Interface
+K comparator, push pull
+$ENDCMP
+#
+$CMP MCP4726
+D Microchip 12-Bit Voltage Output Digital-to-Analog Converter with EEPROM and I2C Interface
 K comparator, push pull
 $ENDCMP
 #

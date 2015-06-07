@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LM139J
+D Low power, low offset voltage quad comparator
+K comparator
+$ENDCMP
+#
+#End Doc Library

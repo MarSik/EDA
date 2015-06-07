@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TLC2272CD
+D Texas Instruments Rail-To-Rail dual LinCMOS OPAMP. Low noise (9nv/sqrt Hz), 2.2Mhz GBW
+K opamp, fet
+$ENDCMP
+#
+#End Doc Library
