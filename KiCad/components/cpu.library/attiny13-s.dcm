@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ATTINY13-S
+D ATTINY13, SO8 Wide, 1k Flash, 64B SRAM, 64B EEPROM, Debug Wire
+K AVR 8bit Microcontroller tinyAVR
+F http://www.atmel.com/Images/doc2535.pdf
+$ENDCMP
+#
+$CMP ATTINY13A-S
+D ATTINY13A, SO8 Wide, 1k Flash, 64B SRAM, 64B EEPROM, Debug Wire
+K AVR 8bit Microcontroller tinyAVR
+F http://www.atmel.com/Images/doc8126.pdf
+$ENDCMP
+#
+#End Doc Library
