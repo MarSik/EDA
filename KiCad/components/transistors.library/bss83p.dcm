@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BSS83P
+D SIPMOS Small-Signal-Transistor, Vds = -60V, Rds(on) = 2 Ohm, Id = -0.33A
+K pmos p-mos p-mosfet transistor
+$ENDCMP
+#
+#End Doc Library

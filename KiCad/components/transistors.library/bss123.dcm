@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BSS123
+D N-channel TrenchMOS transistor, logic level, Vdss = 100V, Id = 150mA, Rds(on) = 6 Ohm
+K nmos n-mos n-mosfet transistor
+$ENDCMP
+#
+#End Doc Library
