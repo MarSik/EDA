@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SK110
+D Surface Mount Schottky Rectifier Diode 1A 100V
+K diode schottky rectifier
+$ENDCMP
+#
+#End Doc Library

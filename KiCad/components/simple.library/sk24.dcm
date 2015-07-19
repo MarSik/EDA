@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SK24
+D Surface Mount Schottky Rectifier Diode 2A 40V
+K diode schottky rectifier
+$ENDCMP
+#
+#End Doc Library
