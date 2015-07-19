@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP2530GY-HF
+D AP2530GY-HF
+K nmos n-mos n-mosfet pmos p-mos p-mosfet transistor
+$ENDCMP
+#
+#End Doc Library

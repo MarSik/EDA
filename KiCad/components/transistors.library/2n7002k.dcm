@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 2N7002K
+D N-Channel Enhancement Mode Field Effect Transistor
+K nmos n-mos n-mosfet transistor
+$ENDCMP
+#
+#End Doc Library

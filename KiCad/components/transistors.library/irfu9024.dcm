@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IRFU9024
+D Power MOSFET, RDS(on) = 0.28 Ohm, VDS = -60V, ID = -8.8A
+K pmos p-mos p-mosfet transistor
+$ENDCMP
+#
+#End Doc Library

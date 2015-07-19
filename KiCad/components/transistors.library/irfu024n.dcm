@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IRFU024N
+D HEXFET Power MOSFET, VDSS= 55V, RDS(on) = 0.075Ω, ID = 17A
+K nmos n-mos n-mosfet transistor
+$ENDCMP
+#
+#End Doc Library

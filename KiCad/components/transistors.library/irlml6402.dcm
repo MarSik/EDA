@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IRLML6402
+D HEXFET® Power MOSFET, VDSS = -20V, RDS(on) = 0.065Ω
+K pmos p-mos p-mosfet transistor
+$ENDCMP
+#
+#End Doc Library
