@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BAT43
+D Small Signal Schottky Diode
+K diode schottky rectifier
+$ENDCMP
+#
+#End Doc Library

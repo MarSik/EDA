@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TS4148RXG
+D 400mW High Speed SMD Switching Diode
+K diode
+$ENDCMP
+#
+#End Doc Library

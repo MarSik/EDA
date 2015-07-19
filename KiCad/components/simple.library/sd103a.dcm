@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SD103A
+D The SD103 series is a metal-on-silicon Schottky barrier device which is protected by a PN junction guardring
+K diode schottky rectifier
+$ENDCMP
+#
+#End Doc Library
