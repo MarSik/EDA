@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MMBT2222A
+D Surface Mount Si-Epi-Planar Switching Transistor, Vce = 40V, Vcb = 75V, Veb = 6V, Ic = 600mA
+K npn transistor 2n2222
+$ENDCMP
+#
+#End Doc Library

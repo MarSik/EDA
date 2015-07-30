@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BF245A
+D N-channel silicon field-effect transistors, frequencies up to 700 MHz
+K njfet n-jfet transistor
+$ENDCMP
+#
+#End Doc Library
