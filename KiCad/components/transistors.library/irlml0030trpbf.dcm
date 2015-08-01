@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IRLML0030TRPBF
+D HEXFET® Power MOSFET, Vds = 30V, Rdson = 40mohm, Id = 5.3A
+K nmos n-mos n-mosfet transistor
+$ENDCMP
+#
+#End Doc Library

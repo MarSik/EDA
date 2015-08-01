@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BC857C
+D PNP general purpose transistor, 45V Vce, 0.2A Ic, PNP, SOT-23
+K BC857 PNP Transistor
+$ENDCMP
+#
+#End Doc Library
