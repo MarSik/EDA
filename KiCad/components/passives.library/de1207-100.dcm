@@ -1,0 +1,7 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP DE1207-100
+D Choke 100uH; 2,1A; 0.151Ω; SMD
+$ENDCMP
+#
+#End Doc Library

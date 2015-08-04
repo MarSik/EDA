@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BZX84C5.1V
+D Diode zener 5.1V, 225mW
+K DEV DIODE zener
+$ENDCMP
+#
+#End Doc Library
