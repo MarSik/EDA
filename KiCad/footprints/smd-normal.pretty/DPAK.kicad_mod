@@ -1,4 +1,4 @@
-(module DPAK (layer F.Cu) (tedit 55C2206A)
+(module DPAK (layer F.Cu) (tedit 55C22A04)
   (fp_text reference REF** (at 0.75 -6.25 180) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -15,5 +15,5 @@
   (fp_line (start -3 -5.5) (end 3 -5.5) (layer F.SilkS) (width 0.15))
   (pad 3 smd rect (at 2.28 4) (size 1.2 2.2) (layers F.Cu F.Paste F.Mask))
   (pad 1 smd rect (at -2.28 4) (size 1.2 2.2) (layers F.Cu F.Paste F.Mask))
-  (pad 2 smd rect (at 0 -2.3) (size 5.8 6.4) (layers F.Cu F.Paste F.Mask))
+  (pad 4 smd rect (at 0 -2.3) (size 5.8 6.4) (layers F.Cu F.Paste F.Mask))
 )
