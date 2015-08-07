@@ -4,8 +4,8 @@ function find_models() {
 }
 
 NEW=0
+UPDATED=0
 OK=0
-LOCAL=0
 NOTFOUND=0
 
 DEST=packages3d
@@ -19,29 +19,30 @@ for line in $(find_models); do
       DIR=$(dirname $line)
       mkdir -p $DEST/$DIR
       if [ -r $DEST/$line ]; then
-        OK=$(expr $OK + 1)
-        echo -n " .. OK"
+        UPDATED=$(expr $UPDATED + 1)
+        echo -n " .. UPDATED"
       else
         NEW=$(expr $NEW + 1)
         echo -n " .. NEW"
       fi
       cp "$SOURCE/$line" $DEST/$line
-    else
-      if [ -r $DEST/$line ]; then
-        echo -n " .. LOCAL"
-        LOCAL=$(expr $LOCAL + 1)
-      else
-        echo -n " .. NOTFOUND"
-        NOTFOUND=$(expr $NOTFOUND + 1)
-      fi
     fi
   fi
+
+  if [ -r $DEST/$line ]; then
+    echo -n " .. OK"
+    OK=$(expr $OK + 1)
+  else
+    echo -n " .. NOTFOUND"
+    NOTFOUND=$(expr $NOTFOUND + 1)
+  fi
+
   echo
 done
 
 echo
 echo "Imported models: $NEW"
-echo "Updated models: $OK"
-echo "Preserved models: $LOCAL"
+echo "Updated models: $UPDATED"
+echo "Existing models: $OK"
 echo "Missing models: $NOTFOUND"
 

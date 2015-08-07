@@ -10,6 +10,7 @@ $FPLIST
  Pin_Header_Angled_1X14
  Socket_Strip_Straight_1X14
  Socket_Strip_Angled_1X14
+ Screw_Terminal*
 $ENDFPLIST
 DRAW
 S -50 -645 10 -655 0 1 0 N
