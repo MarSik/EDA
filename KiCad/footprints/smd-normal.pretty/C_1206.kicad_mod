@@ -1,4 +1,4 @@
-(module Capacitors_SMD:C_1206 (layer F.Cu) (tedit 5415D7BD)
+(module C_1206 (layer F.Cu) (tedit 5415D7BD)
   (descr "Capacitor SMD 1206, reflow soldering, AVX (see smccp.pdf)")
   (tags "capacitor 1206")
   (attr smd)

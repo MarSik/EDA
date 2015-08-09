@@ -24,7 +24,7 @@
   (pad 5 smd rect (at 1.1 -0.95) (size 1.06 0.65) (layers F.Cu F.Paste F.Mask))
   (model Housings_SOT-23_SOT-143_TSOT-6.3dshapes/SOT-23-5.wrl
     (at (xyz 0 0 0))
-    (scale (xyz 0.11 0.11 0.11))
-    (rotate (xyz 0 0 90))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
   )
 )

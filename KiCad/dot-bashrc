@@ -1,0 +1,3 @@
+export KISYS3DMOD="$HOME/Dropbox/EDA/repo/KiCAD/packages3d"
+export KISYSMOD="$HOME/Dropbox/EDA/repo/KiCAD/footprints"
+
